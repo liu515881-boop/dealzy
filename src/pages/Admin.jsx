@@ -8,8 +8,10 @@ import {
   Layout, Menu, Card, Row, Col, Table, Tag, Space, Button, 
   Statistic, Progress, Avatar, Typography, Divider, Select,
   Modal, Form, Input, InputNumber, message as antdMessage,
-  Badge, Tooltip, Upload, TextArea
+  Badge, Tooltip, Upload
 } from 'antd'
+
+const { TextArea } = Input
 import {
   DashboardOutlined,
   HomeOutlined,
