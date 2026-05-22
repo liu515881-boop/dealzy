@@ -410,13 +410,112 @@ async function sendDealNotification(deal) {
 }
 
 /**
+ * AI 房源生成 - 上传图片生成房源描述
+ */
+app.post('/api/ai/generate-property', async (req, res) => {
+  const { images, area, unitType, sqft, price } = req.body;
+  
+  if (!images || images.length === 0) {
+    return res.status(400).json({ error: '请上传房源照片' });
+  }
+  
+  // TODO: 调用通义千问 VL API 识别图片
+  // 这里先模拟 AI 识别结果
+  const mockAIResult = {
+    furnished: images.length > 3, // 模拟：照片多默认带家具
+    style: 'Modern',
+    rooms: detectRooms(images),
+    description: generateMockDescription(area, unitType, sqft),
+    arabicDescription: generateMockArabicDescription(area, unitType, sqft),
+    estimatedPrice: {
+      min: Math.round(sqft * 800),
+      max: Math.round(sqft * 1200),
+      currency: 'AED',
+      period: 'year'
+    },
+    insights: [
+      `区域 ${area} 平均租金增长 8%（2025-2026）`,
+      `${unitType} 需求量大，空置率<5%`,
+      `建议装修预算：${sqft * 50} AED 可提升租金 15%`
+    ]
+  };
+  
+  res.json({
+    success: true,
+    data: mockAIResult
+  });
+});
+
+/**
+ * AI 房源生成 - 保存到房源库
+ */
+app.post('/api/ai/save-property', async (req, res) => {
+  const { title, area, unitType, sqft, price, type, description, furnished, images } = req.body;
+  
+  const newProperty = {
+    id: properties.length + 1,
+    title,
+    area,
+    bedrooms: unitType === 'Studio' ? 0 : parseInt(unitType) || 1,
+    bathrooms: unitType === 'Studio' ? 1 : 2,
+    sqft,
+    price,
+    type: type || 'rent',
+    status: 'available',
+    furnished: furnished || false,
+    description,
+    images: images || [],
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString()
+  };
+  
+  properties.push(newProperty);
+  
+  // TODO: 保存到数据库
+  console.log(`🏠 新房源入库：${title} - ${area} - ${price} AED`);
+  
+  res.json({
+    success: true,
+    message: '房源已保存到房源库',
+    data: newProperty
+  });
+});
+
+/**
+ * 模拟房间识别
+ */
+function detectRooms(images) {
+  const rooms = [];
+  // 模拟识别结果
+  if (images.length >= 1) rooms.push('Living Room');
+  if (images.length >= 2) rooms.push('Bedroom');
+  if (images.length >= 3) rooms.push('Kitchen');
+  if (images.length >= 4) rooms.push('Bathroom');
+  return rooms;
+}
+
+/**
+ * 模拟生成英文描述
+ */
+function generateMockDescription(area, unitType, sqft) {
+  return `This stunning ${unitType} in ${area} offers ${sqft} sqft of luxurious living space. The property features modern finishes, abundant natural light, and a spacious layout perfect for families or professionals. Located in a prime area with easy access to schools, shopping, and major highways.`;
+}
+
+/**
+ * 模拟生成阿拉伯语描述
+ */
+function generateMockArabicDescription(area, unitType, sqft) {
+  return `تقدم هذه الشقة الرائعة من نوع ${unitType} في ${area} مساحة معيشة فاخرة تبلغ ${sqft} قدم مربع. تتميز اللمسات العصرية والإضاءة الطبيعية الوفيرة والتصميم الواسع المثالي للعائلات أو المهنيين.`;
+}
+
+/**
  * 健康检查
  */
 app.get('/api/health', (req, res) => {
   res.json({
     status: 'ok',
     timestamp: new Date().toISOString(),
-    version: '2.0.0',
+    version: '2.1.0',
     stats: {
       properties: properties.length,
       deals: deals.length,

@@ -8,7 +8,7 @@ import {
   Layout, Menu, Card, Row, Col, Table, Tag, Space, Button, 
   Statistic, Progress, Avatar, Typography, Divider, Select,
   Modal, Form, Input, InputNumber, message as antdMessage,
-  Badge, Tooltip
+  Badge, Tooltip, Upload, TextArea
 } from 'antd'
 import {
   DashboardOutlined,
@@ -21,7 +21,11 @@ import {
   PhoneOutlined,
   MailOutlined,
   EditOutlined,
-  DeleteOutlined
+  DeleteOutlined,
+  ThunderboltOutlined,
+  UploadOutlined,
+  CameraOutlined,
+  SaveOutlined
 } from '@ant-design/icons'
 
 const { Header, Sider, Content } = Layout
@@ -85,6 +89,8 @@ const Admin = () => {
         return <Dashboard stats={stats} properties={properties} deals={deals} salesTeam={salesTeam} />
       case 'properties':
         return <PropertyManagement properties={properties} onUpdate={loadData} />
+      case 'ai-generator':
+        return <AIGenerator onSave={loadData} />
       case 'deals':
         return <DealManagement deals={deals} onUpdate={loadData} />
       case 'sales':
@@ -113,6 +119,7 @@ const Admin = () => {
           items={[
             { key: 'dashboard', icon: <DashboardOutlined />, label: '仪表盘' },
             { key: 'properties', icon: <HomeOutlined />, label: '房源管理' },
+            { key: 'ai-generator', icon: <ThunderboltOutlined />, label: 'AI 房源生成' },
             { key: 'deals', icon: <CheckCircleOutlined />, label: '成交管理' },
             { key: 'sales', icon: <TeamOutlined />, label: '销售团队' },
           ]}
@@ -130,6 +137,7 @@ const Admin = () => {
           <Title level={4} style={{ margin: 0 }}>
             {current === 'dashboard' && '仪表盘'}
             {current === 'properties' && '房源管理'}
+            {current === 'ai-generator' && 'AI 房源生成'}
             {current === 'deals' && '成交管理'}
             {current === 'sales' && '销售团队'}
           </Title>
@@ -623,6 +631,285 @@ const SalesTeam = ({ salesTeam, properties }) => {
         rowKey="id"
         pagination={false}
       />
+    </div>
+  )
+}
+
+/**
+ * AI 房源生成组件
+ */
+const AIGenerator = ({ onSave }) => {
+  const [loading, setLoading] = useState(false)
+  const [generating, setGenerating] = useState(false)
+  const [images, setImages] = useState([])
+  const [aiResult, setAiResult] = useState(null)
+  const [form] = Form.useForm()
+
+  // 处理图片上传
+  const handleImageUpload = ({ file, fileList }) => {
+    setImages(fileList)
+  }
+
+  // 调用 AI 生成
+  const handleGenerate = async () => {
+    const values = await form.validateFields().catch(() => null)
+    if (!values) return
+    
+    if (images.length === 0) {
+      antdMessage.warning('请上传至少 1 张房源照片')
+      return
+    }
+
+    setGenerating(true)
+    
+    // 模拟 API 调用（后续接真实 API）
+    setTimeout(async () => {
+      try {
+        const response = await fetch(`${API_BASE}/ai/generate-property`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            images: images.map(img => img.name),
+            area: values.area,
+            unitType: values.unitType,
+            sqft: values.sqft,
+            price: values.price
+          })
+        })
+        
+        const data = await response.json()
+        if (data.success) {
+          setAiResult(data.data)
+          antdMessage.success('AI 生成成功！')
+        }
+      } catch (error) {
+        antdMessage.error('生成失败：' + error.message)
+      } finally {
+        setGenerating(false)
+      }
+    }, 2000)
+  }
+
+  // 保存到房源库
+  const handleSave = async () => {
+    if (!aiResult) return
+    
+    const values = form.getFieldsValue()
+    
+    try {
+      const response = await fetch(`${API_BASE}/ai/save-property`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          title: `${values.area} ${values.unitType} for ${values.type === 'rent' ? 'Rent' : 'Sale'}`,
+          area: values.area,
+          unitType: values.unitType,
+          sqft: values.sqft,
+          price: values.price,
+          type: values.type,
+          description: aiResult.description,
+          furnished: aiResult.furnished,
+          images: images.map(img => img.name)
+        })
+      })
+      
+      const data = await response.json()
+      if (data.success) {
+        antdMessage.success('房源已保存到房源库！')
+        setAiResult(null)
+        setImages([])
+        form.resetFields()
+        onSave()
+      }
+    } catch (error) {
+      antdMessage.error('保存失败：' + error.message)
+    }
+  }
+
+  return (
+    <div style={{ maxWidth: 900, margin: '0 auto' }}>
+      <Card 
+        title={
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+            <CameraOutlined style={{ fontSize: 24, color: '#722ed1' }} />
+            <span>AI 房源生成器</span>
+          </div>
+        }
+        extra={<ThunderboltOutlined style={{ color: '#722ed1' }} />}
+      >
+        <p style={{ color: '#666', marginBottom: 20 }}>
+          上传房源照片，AI 自动识别装修风格、是否带家具，并生成专业英文 + 阿拉伯语描述。
+        </p>
+
+        <Form form={form} layout="vertical">
+          {/* 图片上传 */}
+          <Form.Item label="房源照片">
+            <Upload
+              listType="picture-card"
+              multiple
+              maxCount={10}
+              fileList={images}
+              onChange={handleImageUpload}
+              beforeUpload={() => false}
+            >
+              {images.length < 10 && (
+                <div>
+                  <UploadOutlined />
+                  <div style={{ marginTop: 8 }}>上传照片</div>
+                </div>
+              )}
+            </Upload>
+          </Form.Item>
+
+          <Divider />
+
+          {/* 房源信息 */}
+          <Row gutter={16}>
+            <Col span={12}>
+              <Form.Item
+                label="区域"
+                name="area"
+                rules={[{ required: true, message: '请选择区域' }]}
+              >
+                <Select placeholder="选择区域" showSearch>
+                  <Option value="Dubai Silicon Oasis (DSO)">DSO</Option>
+                  <Option value="Jumeirah Village Circle (JVC)">JVC</Option>
+                  <Option value="International City">International City</Option>
+                  <Option value="Dubai Marina">Dubai Marina</Option>
+                  <Option value="Downtown Dubai">Downtown Dubai</Option>
+                  <Option value="Business Bay">Business Bay</Option>
+                </Select>
+              </Form.Item>
+            </Col>
+            <Col span={12}>
+              <Form.Item
+                label="户型"
+                name="unitType"
+                rules={[{ required: true, message: '请选择户型' }]}
+              >
+                <Select placeholder="选择户型">
+                  <Option value="Studio">Studio</Option>
+                  <Option value="1BR">1BR</Option>
+                  <Option value="2BR">2BR</Option>
+                  <Option value="3BR">3BR</Option>
+                  <Option value="4BR">4BR</Option>
+                  <Option value="Villa">Villa</Option>
+                </Select>
+              </Form.Item>
+            </Col>
+          </Row>
+
+          <Row gutter={16}>
+            <Col span={8}>
+              <Form.Item
+                label="面积 (sqft)"
+                name="sqft"
+                rules={[{ required: true, message: '请输入面积' }]}
+              >
+                <InputNumber
+                  min={100}
+                  max={10000}
+                  style={{ width: '100%' }}
+                  placeholder="例如：1200"
+                />
+              </Form.Item>
+            </Col>
+            <Col span={8}>
+              <Form.Item
+                label="价格 (AED)"
+                name="price"
+                rules={[{ required: true, message: '请输入价格' }]}
+              >
+                <InputNumber
+                  min={10000}
+                  max={10000000}
+                  style={{ width: '100%' }}
+                  placeholder="例如：80000"
+                />
+              </Form.Item>
+            </Col>
+            <Col span={8}>
+              <Form.Item
+                label="类型"
+                name="type"
+                initialValue="rent"
+              >
+                <Select>
+                  <Option value="rent">出租</Option>
+                  <Option value="sale">出售</Option>
+                </Select>
+              </Form.Item>
+            </Col>
+          </Row>
+
+          <Form.Item>
+            <Button
+              type="primary"
+              size="large"
+              block
+              onClick={handleGenerate}
+              loading={generating}
+              icon={<ThunderboltOutlined />}
+            >
+              {generating ? 'AI 分析中...' : '生成 AI 房源描述'}
+            </Button>
+          </Form.Item>
+        </Form>
+
+        {/* AI 生成结果 */}
+        {aiResult && (
+          <>
+            <Divider>AI 生成结果</Divider>
+            
+            <Card type="inner" title="📝 房源描述（英文）" style={{ marginBottom: 16 }}>
+              <TextArea
+                value={aiResult.description}
+                rows={4}
+                readOnly
+              />
+            </Card>
+
+            <Card type="inner" title="📝 房源描述（阿拉伯语）" style={{ marginBottom: 16 }}>
+              <TextArea
+                value={aiResult.arabicDescription}
+                rows={4}
+                readOnly
+                style={{ direction: 'rtl' }}
+              />
+            </Card>
+
+            <Row gutter={16}>
+              <Col span={12}>
+                <Card type="inner" title="🏠 AI 识别结果">
+                  <div><Text strong>是否带家具：</Text>{aiResult.furnished ? '✅ 带家具' : '❌ 不带家具'}</div>
+                  <div><Text strong>装修风格：</Text>{aiResult.style}</div>
+                  <div><Text strong>识别房间：</Text>{aiResult.rooms.join(', ')}</div>
+                </Card>
+              </Col>
+              <Col span={12}>
+                <Card type="inner" title="💡 AI 洞察">
+                  <ul style={{ paddingLeft: 20, margin: 0 }}>
+                    {aiResult.insights.map((insight, i) => (
+                      <li key={i} style={{ marginBottom: 8, fontSize: 13 }}>{insight}</li>
+                    ))}
+                  </ul>
+                </Card>
+              </Col>
+            </Row>
+
+            <Button
+              type="primary"
+              size="large"
+              block
+              style={{ marginTop: 16 }}
+              onClick={handleSave}
+              icon={<SaveOutlined />}
+            >
+              保存到房源库
+            </Button>
+          </>
+        )}
+      </Card>
     </div>
   )
 }
