@@ -34,7 +34,7 @@ const useHashRoute = () => {
 }
 
 // 真实房源数据
-import propertiesData from '../data/properties.json' assert { type: 'json' }
+import propertiesData from '../data/properties.json'
 const mockProperties = propertiesData.slice(0, 50)
 
 /**
