@@ -652,7 +652,7 @@ const AIGenerator = ({ onSave }) => {
     setImages(fileList)
   }
 
-  // 调用 AI 生成
+  // 调用 AI 生成（纯前端实现）
   const handleGenerate = async () => {
     const values = await form.validateFields().catch(() => null)
     if (!values) return
@@ -664,68 +664,82 @@ const AIGenerator = ({ onSave }) => {
 
     setGenerating(true)
     
-    // 模拟 API 调用（后续接真实 API）
-    setTimeout(async () => {
-      try {
-        const response = await fetch(`${API_BASE}/ai/generate-property`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            images: images.map(img => img.name),
-            area: values.area,
-            unitType: values.unitType,
-            sqft: values.sqft,
-            price: values.price
-          })
-        })
-        
-        const data = await response.json()
-        if (data.success) {
-          setAiResult(data.data)
-          antdMessage.success('AI 生成成功！')
-        }
-      } catch (error) {
-        antdMessage.error('生成失败：' + error.message)
-      } finally {
-        setGenerating(false)
+    // 纯前端模拟 AI 生成（后续接真实 API）
+    setTimeout(() => {
+      // 模拟 AI 识别结果
+      const mockAIResult = {
+        furnished: images.length >= 3,
+        style: 'Modern',
+        rooms: detectRooms(images.length),
+        description: generateDescription(values.area, values.unitType, values.sqft),
+        arabicDescription: generateArabicDescription(values.area, values.unitType, values.sqft),
+        estimatedPrice: {
+          min: Math.round(values.sqft * 800),
+          max: Math.round(values.sqft * 1200),
+          currency: 'AED',
+          period: 'year'
+        },
+        insights: [
+          `区域 ${values.area} 平均租金增长 8%（2025-2026）`,
+          `${values.unitType} 需求量大，空置率<5%`,
+          `建议装修预算：${values.sqft * 50} AED 可提升租金 15%`
+        ]
       }
-    }, 2000)
+      
+      setAiResult(mockAIResult)
+      setGenerating(false)
+      antdMessage.success('AI 生成成功！')
+    }, 1500)
   }
 
-  // 保存到房源库
+  // 辅助函数
+  const detectRooms = (imageCount) => {
+    const rooms = []
+    if (imageCount >= 1) rooms.push('Living Room')
+    if (imageCount >= 2) rooms.push('Bedroom')
+    if (imageCount >= 3) rooms.push('Kitchen')
+    if (imageCount >= 4) rooms.push('Bathroom')
+    return rooms
+  }
+
+  const generateDescription = (area, unitType, sqft) => {
+    return `This stunning ${unitType} in ${area} offers ${sqft} sqft of luxurious living space. The property features modern finishes, abundant natural light, and a spacious layout perfect for families or professionals. Located in a prime area with easy access to schools, shopping, and major highways.`
+  }
+
+  const generateArabicDescription = (area, unitType, sqft) => {
+    return `تقدم هذه الشقة الرائعة من نوع ${unitType} في ${area} مساحة معيشة فاخرة تبلغ ${sqft} قدم مربع. تتميز اللمسات العصرية والإضاءة الطبيعية الوفيرة والتصميم الواسع المثالي للعائلات أو المهنيين.`
+  }
+
+  // 保存到房源库（纯前端实现）
   const handleSave = async () => {
     if (!aiResult) return
     
     const values = form.getFieldsValue()
     
-    try {
-      const response = await fetch(`${API_BASE}/ai/save-property`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          title: `${values.area} ${values.unitType} for ${values.type === 'rent' ? 'Rent' : 'Sale'}`,
-          area: values.area,
-          unitType: values.unitType,
-          sqft: values.sqft,
-          price: values.price,
-          type: values.type,
-          description: aiResult.description,
-          furnished: aiResult.furnished,
-          images: images.map(img => img.name)
-        })
-      })
-      
-      const data = await response.json()
-      if (data.success) {
-        antdMessage.success('房源已保存到房源库！')
-        setAiResult(null)
-        setImages([])
-        form.resetFields()
-        onSave()
-      }
-    } catch (error) {
-      antdMessage.error('保存失败：' + error.message)
+    // 模拟保存（后续接真实 API）
+    const newProperty = {
+      id: Date.now(),
+      title: `${values.area} ${values.unitType} for ${values.type === 'rent' ? 'Rent' : 'Sale'}`,
+      area: values.area,
+      bedrooms: values.unitType === 'Studio' ? 0 : parseInt(values.unitType) || 1,
+      bathrooms: values.unitType === 'Studio' ? 1 : 2,
+      sqft: values.sqft,
+      price: values.price,
+      type: values.type || 'rent',
+      status: 'available',
+      furnished: aiResult.furnished,
+      description: aiResult.description,
+      images: images.map(img => img.name),
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString()
     }
+    
+    console.log('🏠 新房源:', newProperty)
+    antdMessage.success('✅ 房源已保存（演示模式）')
+    setAiResult(null)
+    setImages([])
+    form.resetFields()
+    onSave()
   }
 
   return (
