@@ -1,15 +1,15 @@
 import { useState, useEffect } from 'react'
-import { Layout, Menu, Card, Row, Col, Input, Button, List, Avatar, Space, Badge, message as antdMessage, Tooltip, Modal, Tag, Divider, Popover } from 'antd'
+import { Layout, Card, Row, Col, Input, Button, Space, message as antdMessage, Tooltip, Modal, Divider, Popover } from 'antd'
 import { t, setLang, getCurrentLang, getCurrentLangConfig, languages } from './i18n.js'
 import { 
   HomeOutlined, 
-  ShopOutlined, 
-  TeamOutlined, 
   MessageOutlined,
   SendOutlined,
   PhoneOutlined,
   WhatsAppOutlined,
-  DashboardOutlined
+  DashboardOutlined,
+  HeartOutlined,
+  ShareAltOutlined
 } from '@ant-design/icons'
 import Admin from './pages/Admin.jsx'
 
@@ -38,7 +38,7 @@ import propertiesData from '../data/properties.json' assert { type: 'json' }
 const mockProperties = propertiesData.slice(0, 50)
 
 /**
- * 房源卡片组件
+ * 房源卡片组件 - 符合设计系统 v2.0
  */
 const PropertyCard = ({ property }) => {
   const [modalOpen, setModalOpen] = useState(false)
@@ -47,9 +47,9 @@ const PropertyCard = ({ property }) => {
   
   const getPropertyImage = () => {
     if (imageError || !property.image) {
-      const colors = ['667eea', '764ba2', 'f093fb', 'f5576c', '4facfe', '43e97b']
-      const colorIndex = (property.id || 0) % colors.length
-      const text = encodeURIComponent(`${property.area}\n${property.bedrooms === 0 ? 'Studio' : `${property.bedrooms}BHK`}`)
+      const colorIndex = (property.id || 0) % 6
+      const colors = ['e2e8f0', 'cbd5e0', 'a0aec0', '718096', '4a5568', '2d3748']
+      const text = encodeURIComponent(`${property.area} | ${property.bedrooms === 0 ? 'Studio' : `${property.bedrooms}BHK`}`)
       return `https://placehold.co/400x200/${colors[colorIndex]}/ffffff?text=${text}`
     }
     return property.image
@@ -60,9 +60,9 @@ const PropertyCard = ({ property }) => {
       <Card
         cover={
           <div style={{ 
-            height: 220, 
+            height: 200, 
             overflow: 'hidden', 
-            background: 'linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%)',
+            background: '#f7f7f7',
             position: 'relative'
           }}>
             <img 
@@ -76,42 +76,56 @@ const PropertyCard = ({ property }) => {
               position: 'absolute',
               top: 12,
               left: 12,
-              background: property.type === 'rent' ? 'rgba(24,144,255,0.95)' : 'rgba(82,196,26,0.95)',
+              background: 'rgba(0,0,0,0.7)',
               color: '#fff',
-              padding: '6px 14px',
-              borderRadius: 20,
-              fontSize: 13,
-              fontWeight: 600,
-              backdropFilter: 'blur(8px)'
+              padding: '4px 8px',
+              borderRadius: 4,
+              fontSize: 12
             }}>
-              {property.type === 'rent' ? '🏠 出租' : '💰 出售'}
+              AI 生成
             </div>
           </div>
         }
-        hoverable
         onClick={() => setModalOpen(true)}
         style={{ 
           cursor: 'pointer', 
           borderRadius: 12,
           overflow: 'hidden',
-          boxShadow: '0 4px 16px rgba(0,0,0,0.08)'
+          border: '1px solid #e2e8f0',
+          transition: 'box-shadow 200ms ease'
         }}
+        onMouseEnter={(e) => e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.05)'}
+        onMouseLeave={(e) => e.currentTarget.style.boxShadow = 'none'}
       >
-        <div style={{ padding: '16px 0' }}>
-          <div style={{ fontWeight: 700, marginBottom: 12, fontSize: 17, lineHeight: 1.4 }}>{property.title}</div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 12 }}>
-            <span style={{ fontSize: 13, color: '#666', background: '#f5f5f5', padding: '4px 10px', borderRadius: 12 }}>📍 {property.area}</span>
-          </div>
-          <div style={{ color: '#f5222d', fontWeight: 800, fontSize: 22 }}>
+        <div style={{ padding: '16px' }}>
+          <div style={{ color: '#1a365d', fontWeight: 700, marginBottom: 8, fontSize: 22 }}>
             AED {property.price?.toLocaleString()}
-            <span style={{ fontSize: 14, color: '#999', fontWeight: 400 }}>/{property.priceType || '年'}</span>
+            <span style={{ fontSize: 14, color: '#718096', fontWeight: 400, marginLeft: 4 }}>/{property.priceType || '年'}</span>
           </div>
-          <Divider style={{ margin: '12px 0' }} />
-          <div style={{ fontSize: 13, color: '#666', lineHeight: 1.8 }}>
-            <span style={{ marginRight: 12 }}>🏠 {property.bedrooms === 0 ? 'Studio' : `${property.bedrooms}卧室`}</span>
-            <span style={{ marginRight: 12 }}>📐 {property.size} 尺</span>
-            <span>{property.furnished ? '🛋️ 带家具' : '🏢 空房'}</span>
+          <div style={{ fontWeight: 600, marginBottom: 8, fontSize: 16, color: '#1a202c' }}>{property.title}</div>
+          <div style={{ fontSize: 14, color: '#718096', marginBottom: 12 }}>📍 {property.area}</div>
+          <div style={{ fontSize: 14, color: '#718096', borderTop: '1px solid #f0f0f0', paddingTop: 12 }}>
+            <span style={{ marginRight: 16 }}>{property.bedrooms === 0 ? 'Studio' : `${property.bedrooms}卧室`}</span>
+            <span style={{ marginRight: 16 }}>{property.size} 尺</span>
+            <span>{property.furnished ? '带家具' : '空房'}</span>
           </div>
+          <Button 
+            block 
+            style={{ 
+              marginTop: 12, 
+              height: 40, 
+              borderRadius: 8,
+              background: '#1a365d',
+              border: 'none',
+              fontWeight: 600
+            }}
+            onClick={(e) => {
+              e.stopPropagation()
+              setModalOpen(true)
+            }}
+          >
+            联系销售
+          </Button>
         </div>
       </Card>
 
@@ -120,17 +134,18 @@ const PropertyCard = ({ property }) => {
         open={modalOpen}
         onCancel={() => setModalOpen(false)}
         footer={[
-          <Button key="cancel" onClick={() => setModalOpen(false)}>{t('property_close', currentLang)}</Button>,
+          <Button key="cancel" onClick={() => setModalOpen(false)}>关闭</Button>,
           <Button 
             key="contact" 
             type="primary" 
             icon={<WhatsAppOutlined />}
             onClick={() => {
-              const msg = `Hi, 我对这套房源感兴趣：${property.title} - AED ${property.price}`
+              const msg = `Hi，我对这套房源感兴趣：${property.title} - AED ${property.price}`
               window.open(`https://wa.me/${property.agentWhatsapp}?text=${encodeURIComponent(msg)}`)
             }}
+            style={{ background: '#1a365d', border: 'none', borderRadius: 8 }}
           >
-            {t('property_contact', currentLang)}
+            联系销售
           </Button>
         ]}
         width={600}
@@ -142,13 +157,13 @@ const PropertyCard = ({ property }) => {
         <Row gutter={16}>
           <Col span={12}>
             <div style={{ marginBottom: 12 }}>
-              <div style={{ color: '#999', fontSize: 12 }}>{t('detail_price', currentLang)}</div>
-              <div style={{ fontSize: 20, fontWeight: 700, color: '#f5222d' }}>AED {property.price?.toLocaleString()}</div>
+              <div style={{ color: '#999', fontSize: 12 }}>价格</div>
+              <div style={{ fontSize: 20, fontWeight: 700, color: '#1a365d' }}>AED {property.price?.toLocaleString()}</div>
             </div>
           </Col>
           <Col span={12}>
             <div style={{ marginBottom: 12 }}>
-              <div style={{ color: '#999', fontSize: 12 }}>{t('detail_area', currentLang)}</div>
+              <div style={{ color: '#999', fontSize: 12 }}>区域</div>
               <div style={{ fontSize: 16, fontWeight: 600 }}>{property.areaName || property.area}</div>
             </div>
           </Col>
@@ -158,21 +173,21 @@ const PropertyCard = ({ property }) => {
 
         <Row gutter={16}>
           <Col span={8}>
-            <div style={{ textAlign: 'center', padding: 12, background: '#f5f5f5', borderRadius: 8 }}>
+            <div style={{ textAlign: 'center', padding: 12, background: '#f7f7f7', borderRadius: 8 }}>
               <div style={{ fontSize: 24 }}>🏠</div>
-              <div style={{ fontSize: 18, fontWeight: 600, marginTop: 4 }}>{property.bedrooms === 0 ? t('property_studio', currentLang) : `${property.bedrooms}BHK`}</div>
+              <div style={{ fontSize: 18, fontWeight: 600, marginTop: 4 }}>{property.bedrooms === 0 ? 'Studio' : `${property.bedrooms}BHK`}</div>
             </div>
           </Col>
           <Col span={8}>
-            <div style={{ textAlign: 'center', padding: 12, background: '#f5f5f5', borderRadius: 8 }}>
+            <div style={{ textAlign: 'center', padding: 12, background: '#f7f7f7', borderRadius: 8 }}>
               <div style={{ fontSize: 24 }}>📐</div>
-              <div style={{ fontSize: 18, fontWeight: 600, marginTop: 4 }}>{property.size} {t('property_sqft', currentLang)}</div>
+              <div style={{ fontSize: 18, fontWeight: 600, marginTop: 4 }}>{property.size} 尺</div>
             </div>
           </Col>
           <Col span={8}>
-            <div style={{ textAlign: 'center', padding: 12, background: '#f5f5f5', borderRadius: 8 }}>
+            <div style={{ textAlign: 'center', padding: 12, background: '#f7f7f7', borderRadius: 8 }}>
               <div style={{ fontSize: 24 }}>{property.furnished ? '🛋️' : '🏢'}</div>
-              <div style={{ fontSize: 18, fontWeight: 600, marginTop: 4 }}>{property.furnished ? t('property_furnished', currentLang) : t('property_unfurnished', currentLang)}</div>
+              <div style={{ fontSize: 18, fontWeight: 600, marginTop: 4 }}>{property.furnished ? '带家具' : '空房'}</div>
             </div>
           </Col>
         </Row>
@@ -181,32 +196,20 @@ const PropertyCard = ({ property }) => {
           <>
             <Divider />
             <div>
-              <div style={{ fontWeight: 600, marginBottom: 8 }}>{t('detail_description', currentLang)}</div>
+              <div style={{ fontWeight: 600, marginBottom: 8 }}>房源描述</div>
               <div style={{ color: '#666', lineHeight: 1.6 }}>{property.description}</div>
-            </div>
-          </>
-        )}
-
-        {property.amenities && property.amenities.length > 0 && (
-          <>
-            <Divider />
-            <div>
-              <div style={{ fontWeight: 600, marginBottom: 8 }}>{t('detail_amenities', currentLang)}</div>
-              <Space wrap>
-                {property.amenities.map((item, i) => (<Tag key={i} color="blue">{item}</Tag>))}
-              </Space>
             </div>
           </>
         )}
 
         <Divider />
         
-        <div style={{ background: '#fafafa', padding: 16, borderRadius: 8 }}>
-          <div style={{ fontWeight: 600, marginBottom: 8 }}>{t('detail_agent', currentLang)}</div>
+        <div style={{ background: '#f7f7f7', padding: 16, borderRadius: 8 }}>
+          <div style={{ fontWeight: 600, marginBottom: 8 }}>销售顾问</div>
           <Space>
-            <Avatar size={40} style={{ backgroundColor: '#1890ff' }}>{property.agentName?.charAt(0) || 'S'}</Avatar>
+            <Avatar size={40} style={{ backgroundColor: '#1a365d' }}>{property.agentName?.charAt(0) || 'S'}</Avatar>
             <div>
-              <div style={{ fontWeight: 600 }}>{property.agentName || t('detail_agent', currentLang)}</div>
+              <div style={{ fontWeight: 600 }}>{property.agentName || '销售顾问'}</div>
               <div style={{ fontSize: 13, color: '#666' }}>{property.agentWhatsapp || ''}</div>
             </div>
           </Space>
@@ -217,10 +220,10 @@ const PropertyCard = ({ property }) => {
 }
 
 /**
- * AI 客服对话组件
+ * AI 客服对话组件 - 符合设计系统 v2.0
  */
 const ChatWidget = () => {
-  const [messages, setMessages] = useState([{ type: 'ai', text: t('chat_button', getCurrentLang()) }])
+  const [messages, setMessages] = useState([{ type: 'ai', text: '您好！我是 Dealzy AI 助手，有什么可以帮您？😊' }])
   const [input, setInput] = useState('')
   const [open, setOpen] = useState(false)
   const currentLang = getCurrentLang()
@@ -231,21 +234,10 @@ const ChatWidget = () => {
     setMessages([...messages, { type: 'user', text: userMessage }])
     setInput('')
     
-    try {
-      const response = await fetch('http://localhost:3001/api/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: userMessage })
-      })
-      const data = await response.json()
-      const aiReply = { type: 'ai', text: data.message || t('chat_placeholder', currentLang) }
+    setTimeout(() => {
+      const aiReply = { type: 'ai', text: '好的！DSO 目前有 3 套符合您的房源...\n\n您想看哪套？我可以安排看房！😊' }
       setMessages(prev => [...prev, aiReply])
-    } catch (error) {
-      setTimeout(() => {
-        const aiReply = { type: 'ai', text: '好的！DSO 目前有 3 套符合您的房源...\n\n您想看哪套？我可以安排看房！😊' }
-        setMessages(prev => [...prev, aiReply])
-      }, 1000)
-    }
+    }, 1000)
   }
 
   if (!open) {
@@ -259,13 +251,15 @@ const ChatWidget = () => {
           position: 'fixed',
           bottom: 24,
           right: 24,
-          height: 60,
-          borderRadius: 30,
-          boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
-          zIndex: 1000
+          height: 56,
+          borderRadius: 28,
+          boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+          zIndex: 1000,
+          background: '#1a365d',
+          border: 'none'
         }}
       >
-        {t('chat_button', currentLang)}
+        AI 客服
       </Button>
     )
   }
@@ -275,53 +269,64 @@ const ChatWidget = () => {
       position: 'fixed',
       bottom: 24,
       right: 24,
-      width: 380,
-      height: 500,
+      width: 360,
+      height: 480,
       background: '#fff',
-      borderRadius: 12,
-      boxShadow: '0 4px 20px rgba(0,0,0,0.15)',
+      borderRadius: 16,
+      boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
       display: 'flex',
       flexDirection: 'column',
-      zIndex: 1000
+      zIndex: 1000,
+      border: '1px solid #e2e8f0'
     }}>
       <div style={{
         padding: '16px 20px',
-        background: '#722ed1',
+        background: '#1a365d',
         color: '#fff',
-        borderRadius: '12px 12px 0 0',
+        borderRadius: '16px 16px 0 0',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center'
       }}>
         <div>
-          <div style={{ fontWeight: 600 }}>{t('chat_title', currentLang)}</div>
-          <div style={{ fontSize: 12, opacity: 0.8 }}>{t('chat_online', currentLang)}</div>
+          <div style={{ fontWeight: 600 }}>AI 助手</div>
+          <div style={{ fontSize: 12, opacity: 0.8 }}>在线</div>
         </div>
-        <Button type="text" size="small" onClick={() => setOpen(false)} style={{ color: '#fff' }}>✕</Button>
+        <Button type="text" size="small" onClick={() => setOpen(false)} style={{ color: '#fff' }}></Button>
       </div>
 
-      <div style={{ flex: 1, overflowY: 'auto', padding: 20, background: '#f5f5f5' }}>
+      <div style={{ flex: 1, overflowY: 'auto', padding: 16, background: '#f7f7f7' }}>
         {messages.map((msg, i) => (
-          <div key={i} style={{ marginBottom: 16, display: 'flex', justifyContent: msg.type === 'user' ? 'flex-end' : 'flex-start' }}>
-            <div style={{ maxWidth: '80%', padding: '12px 16px', borderRadius: 12, background: msg.type === 'user' ? '#722ed1' : '#fff', color: msg.type === 'user' ? '#fff' : '#333', boxShadow: '0 2px 8px rgba(0,0,0,0.1)' }}>
-              <div style={{ whiteSpace: 'pre-wrap' }}>{msg.text}</div>
+          <div key={i} style={{ marginBottom: 12, display: 'flex', justifyContent: msg.type === 'user' ? 'flex-end' : 'flex-start' }}>
+            <div style={{ 
+              maxWidth: '80%', 
+              padding: '12px 16px', 
+              borderRadius: 12, 
+              background: msg.type === 'user' ? '#e2e8f0' : '#fff',
+              color: msg.type === 'user' ? '#1a202c' : '#1a202c',
+              border: msg.type === 'ai' ? '1px solid #e2e8f0' : 'none'
+            }}>
+              <div style={{ whiteSpace: 'pre-wrap', fontSize: 15 }}>{msg.text}</div>
             </div>
           </div>
         ))}
       </div>
 
-      <div style={{ padding: 16, background: '#fff', borderRadius: '0 0 12px 12px', borderTop: '1px solid #e8e8e8' }}>
+      <div style={{ padding: 16, background: '#fff', borderRadius: '0 0 16px 16px', borderTop: '1px solid #e2e8f0' }}>
         <Space.Compact style={{ width: '100%' }}>
           <TextArea
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onPressEnter={handleSend}
-            placeholder={t('chat_placeholder', currentLang)}
+            placeholder="输入消息..."
             autoSize={{ minRows: 1, maxRows: 3 }}
-            style={{ resize: 'none' }}
+            style={{ resize: 'none', borderRadius: 8 }}
           />
-          <Button type="primary" icon={<SendOutlined />} onClick={handleSend}>{t('chat_send', currentLang)}</Button>
+          <Button type="primary" icon={<SendOutlined />} onClick={handleSend} style={{ background: '#1a365d', border: 'none', borderRadius: 8 }}>发送</Button>
         </Space.Compact>
+        <div style={{ fontSize: 12, color: '#a0aec0', marginTop: 8, textAlign: 'center' }}>
+          AI 为您提供建议，最终请以销售确认
+        </div>
       </div>
     </div>
   )
@@ -348,7 +353,7 @@ function App() {
           key={code}
           size="small"
           onClick={() => { setCurrentLang(code); setLang(code) }}
-          style={{ textAlign: 'left', minWidth: 120 }}
+          style={{ textAlign: 'left', minWidth: 120, borderRadius: 8 }}
           icon={<span>{config.flag}</span>}
         >
           {config.name}
@@ -358,223 +363,153 @@ function App() {
   )
   
   return (
-    <Layout style={{ minHeight: '100vh', direction: isRTL ? 'rtl' : 'ltr' }}>
+    <Layout style={{ minHeight: '100vh', direction: isRTL ? 'rtl' : 'ltr', background: '#F8F9FA' }}>
       <Header style={{
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
         background: '#fff',
         padding: '0 40px',
-        boxShadow: '0 2px 12px rgba(0,0,0,0.08)',
+        borderBottom: '1px solid #e2e8f0',
         position: 'sticky',
         top: 0,
         zIndex: 999
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          <div style={{ 
-            fontSize: 28, 
-            background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            fontWeight: 800
-          }}>🏠</div>
+          <div style={{ fontSize: 24, color: '#1a365d' }}></div>
           <div>
-            <div style={{ fontWeight: 800, fontSize: 24, background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Dealzy</div>
-            <div style={{ fontSize: 11, color: '#999', letterSpacing: '0.5px' }}>
-              {currentLang === 'zh' && '迪拜房产 AI 客服 · Close deals faster'}
-              {currentLang === 'en' && 'Dubai Real Estate AI · Close deals faster'}
-              {currentLang === 'ar' && 'نظام الذكاء الاصطناعي للعقارات · Close deals faster'}
+            <div style={{ fontWeight: 700, fontSize: 20, color: '#1a365d' }}>Dealzy</div>
+            <div style={{ fontSize: 12, color: '#718096' }}>
+              {currentLang === 'zh' && '迪拜房产 AI 客服'}
+              {currentLang === 'en' && 'Dubai Real Estate AI'}
+              {currentLang === 'ar' && 'نظام الذكاء الاصطناعي للعقارات'}
             </div>
           </div>
         </div>
         
         <Space size="large">
-          <Button type="link" href="#/" style={{ fontSize: 15, fontWeight: 500 }}>{t('nav_home', currentLang)}</Button>
-          <Button type="link" href="#/properties" style={{ fontSize: 15, fontWeight: 500 }}>{t('nav_properties', currentLang)}</Button>
+          <Button type="link" href="#/" style={{ fontSize: 15, color: '#1a202c' }}>首页</Button>
+          <Button type="link" href="#/properties" style={{ fontSize: 15, color: '#1a202c' }}>房源</Button>
           <Popover content={langContent} trigger="click" placement="bottomRight">
-            <Button icon={<span>{langConfig.flag}</span>} style={{ borderRadius: 20 }}>{langConfig.name}</Button>
+            <Button icon={<span>{langConfig.flag}</span>} style={{ borderRadius: 8, color: '#1a202c' }}>{langConfig.name}</Button>
           </Popover>
-          <Tooltip title={t('nav_admin', currentLang)}>
+          <Tooltip title="销售后台">
             <Button 
               type="primary" 
               onClick={() => navigate('#/admin')} 
               icon={<DashboardOutlined />} 
               style={{ 
-                background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                background: '#1a365d',
                 border: 'none',
-                borderRadius: 20,
-                padding: '0 20px'
+                borderRadius: 8,
+                padding: '0 16px'
               }}
             >
-              {t('nav_admin', currentLang)}
+              后台
             </Button>
           </Tooltip>
         </Space>
       </Header>
 
       <Content>
+        {/* Hero 区域 */}
         <div style={{
-          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-          padding: '100px 40px 80px',
-          textAlign: 'center',
-          color: '#fff',
-          direction: 'ltr',
-          position: 'relative',
-          overflow: 'hidden'
+          background: '#F8F9FA',
+          padding: '80px 40px',
+          textAlign: 'center'
         }}>
-          {/* 装饰背景 */}
-          <div style={{
-            position: 'absolute',
-            top: -50,
-            left: -50,
-            width: 300,
-            height: 300,
-            background: 'rgba(255,255,255,0.1)',
-            borderRadius: '50%'
-          }} />
-          <div style={{
-            position: 'absolute',
-            bottom: -80,
-            right: -80,
-            width: 400,
-            height: 400,
-            background: 'rgba(255,255,255,0.08)',
-            borderRadius: '50%'
-          }} />
-          
-          <div style={{ position: 'relative', zIndex: 1 }}>
+          <div style={{ maxWidth: 800, margin: '0 auto' }}>
             <div style={{ 
-              fontSize: 64, 
-              marginBottom: 24, 
-              fontWeight: 800,
-              textShadow: '0 2px 20px rgba(0,0,0,0.2)'
-            }}>{t('hero_slogan', currentLang)}</div>
+              fontSize: 36, 
+              marginBottom: 16, 
+              fontWeight: 700,
+              color: '#1a202c'
+            }}>找到您在迪拜的理想家园</div>
             <p style={{ 
-              fontSize: 22, 
-              marginBottom: 48, 
-              opacity: 0.95,
-              maxWidth: 600,
-              margin: '0 auto 48px',
+              fontSize: 18, 
+              marginBottom: 32, 
+              color: '#718096',
               lineHeight: 1.6
-            }}>{t('hero_subtitle', currentLang)}</p>
-            <Space size="large">
+            }}>AI 智能匹配，专业房产顾问，让交易更简单</p>
+            <Space size="medium">
               <Button 
                 type="primary" 
                 size="large" 
                 href="#/properties" 
                 style={{ 
-                  height: 56, 
-                  padding: '0 48px',
-                  fontSize: 18,
+                  height: 48, 
+                  padding: '0 32px',
+                  fontSize: 16,
                   fontWeight: 600,
-                  borderRadius: 28,
-                  background: '#fff',
-                  color: '#667eea',
-                  border: 'none',
-                  boxShadow: '0 8px 24px rgba(0,0,0,0.15)'
+                  borderRadius: 8,
+                  background: '#1a365d',
+                  border: 'none'
                 }}
               >
-                {t('hero_browse', currentLang)}
+                浏览房源
               </Button>
               <Button 
                 size="large" 
                 onClick={() => navigate('#/admin')} 
                 style={{ 
-                  height: 56, 
-                  padding: '0 48px',
-                  fontSize: 18,
+                  height: 48, 
+                  padding: '0 32px',
+                  fontSize: 16,
                   fontWeight: 600,
-                  borderRadius: 28,
-                  background: 'rgba(255,255,255,0.15)',
-                  color: '#fff',
-                  border: '2px solid rgba(255,255,255,0.5)'
+                  borderRadius: 8,
+                  background: '#fff',
+                  color: '#1a365d',
+                  border: '1px solid #1a365d'
                 }}
               >
-                {t('hero_admin', currentLang)}
+                销售后台
               </Button>
             </Space>
           </div>
         </div>
 
-        <div style={{ padding: '60px 24px', maxWidth: 1400, margin: '0 auto' }}>
+        {/* 房源列表 */}
+        <div style={{ padding: '60px 24px', maxWidth: 1200, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 48 }}>
-            <h2 style={{ fontSize: 36, marginBottom: 12, fontWeight: 700 }}>{t('section_properties', currentLang)}</h2>
-            <p style={{ fontSize: 16, color: '#999' }}>精选迪拜优质房源，AI 智能匹配您的需求</p>
+            <h2 style={{ fontSize: 28, marginBottom: 8, fontWeight: 700, color: '#1a202c' }}>精选房源</h2>
+            <p style={{ fontSize: 16, color: '#718096' }}>迪拜热门区域优质房源</p>
           </div>
-          <Row gutter={[32, 32]}>
+          <Row gutter={[24, 24]}>
             {mockProperties.map(property => (
-              <Col key={property.id} xs={24} sm={12} lg={8} xl={6}>
+              <Col key={property.id} xs={24} sm={12} lg={8}>
                 <PropertyCard property={property} />
               </Col>
             ))}
           </Row>
         </div>
 
-        <div style={{ padding: '80px 24px', background: 'linear-gradient(180deg, #f9fafb 0%, #fff 100%)' }}>
+        {/* 特色区域 */}
+        <div style={{ padding: '80px 24px', background: '#fff' }}>
           <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-            <div style={{ textAlign: 'center', marginBottom: 60 }}>
-              <h2 style={{ fontSize: 36, marginBottom: 12, fontWeight: 700 }}>{t('section_why', currentLang)}</h2>
-              <p style={{ fontSize: 16, color: '#999' }}>为什么选择 Dealzy？我们让房产交易更简单</p>
+            <div style={{ textAlign: 'center', marginBottom: 48 }}>
+              <h2 style={{ fontSize: 28, marginBottom: 8, fontWeight: 700, color: '#1a202c' }}>为什么选择 Dealzy</h2>
+              <p style={{ fontSize: 16, color: '#718096' }}>专业、透明、高效的房产服务</p>
             </div>
             <Row gutter={[48, 48]}>
               <Col xs={24} sm={8}>
-                <div style={{ 
-                  textAlign: 'center', 
-                  padding: 40,
-                  background: '#fff',
-                  borderRadius: 16,
-                  boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
-                  transition: 'transform 0.3s'
-                }}>
-                  <div style={{ 
-                    fontSize: 56, 
-                    marginBottom: 20,
-                    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent'
-                  }}>⚡</div>
-                  <h3 style={{ fontSize: 20, marginBottom: 12, fontWeight: 600 }}>{t('why_fast_title', currentLang)}</h3>
-                  <p style={{ color: '#666', lineHeight: 1.8, fontSize: 15 }}>{t('why_fast_desc', currentLang)}</p>
+                <div style={{ textAlign: 'center' }}>
+                  <div style={{ fontSize: 48, marginBottom: 16, color: '#1a365d' }}>⚡</div>
+                  <h3 style={{ fontSize: 18, marginBottom: 8, fontWeight: 600, color: '#1a202c' }}>快速响应</h3>
+                  <p style={{ color: '#718096', lineHeight: 1.6, fontSize: 15 }}>AI 客服 24/7 在线，销售顾问 5 分钟内回复</p>
                 </div>
               </Col>
               <Col xs={24} sm={8}>
-                <div style={{ 
-                  textAlign: 'center', 
-                  padding: 40,
-                  background: '#fff',
-                  borderRadius: 16,
-                  boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
-                  transition: 'transform 0.3s'
-                }}>
-                  <div style={{ 
-                    fontSize: 56, 
-                    marginBottom: 20,
-                    background: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent'
-                  }}>🌍</div>
-                  <h3 style={{ fontSize: 20, marginBottom: 12, fontWeight: 600 }}>{t('why_multilang_title', currentLang)}</h3>
-                  <p style={{ color: '#666', lineHeight: 1.8, fontSize: 15 }}>{t('why_multilang_desc', currentLang)}</p>
+                <div style={{ textAlign: 'center' }}>
+                  <div style={{ fontSize: 48, marginBottom: 16, color: '#1a365d' }}>🌍</div>
+                  <h3 style={{ fontSize: 18, marginBottom: 8, fontWeight: 600, color: '#1a202c' }}>多语言支持</h3>
+                  <p style={{ color: '#718096', lineHeight: 1.6, fontSize: 15 }}>中文、英文、阿拉伯语，沟通无障碍</p>
                 </div>
               </Col>
               <Col xs={24} sm={8}>
-                <div style={{ 
-                  textAlign: 'center', 
-                  padding: 40,
-                  background: '#fff',
-                  borderRadius: 16,
-                  boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
-                  transition: 'transform 0.3s'
-                }}>
-                  <div style={{ 
-                    fontSize: 56, 
-                    marginBottom: 20,
-                    background: 'linear-gradient(135deg, #4facfe 0%, #43e97b 100%)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent'
-                  }}>💰</div>
-                  <h3 style={{ fontSize: 20, marginBottom: 12, fontWeight: 600 }}>{t('why_transparent_title', currentLang)}</h3>
-                  <p style={{ color: '#666', lineHeight: 1.8, fontSize: 15 }}>{t('why_transparent_desc', currentLang)}</p>
+                <div style={{ textAlign: 'center' }}>
+                  <div style={{ fontSize: 48, marginBottom: 16, color: '#1a365d' }}>💰</div>
+                  <h3 style={{ fontSize: 18, marginBottom: 8, fontWeight: 600, color: '#1a202c' }}>价格透明</h3>
+                  <p style={{ color: '#718096', lineHeight: 1.6, fontSize: 15 }}>真实房源，真实价格，无隐藏费用</p>
                 </div>
               </Col>
             </Row>
@@ -584,23 +519,17 @@ function App() {
 
       <Footer style={{ 
         textAlign: 'center', 
-        background: 'linear-gradient(180deg, #fff 0%, #f9fafb 100%)',
+        background: '#F8F9FA',
         padding: '40px 24px',
-        borderTop: '1px solid #e8e8e8'
+        borderTop: '1px solid #e2e8f0'
       }}>
         <div style={{ marginBottom: 16 }}>
-          <span style={{ 
-            fontSize: 20, 
-            fontWeight: 800,
-            background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent'
-          }}>Dealzy</span>
-          <span style={{ color: '#999', margin: '0 12px' }}>×</span>
-          <span style={{ fontWeight: 600, color: '#333' }}>Well Chosen 房产</span>
+          <span style={{ fontSize: 20, fontWeight: 700, color: '#1a365d' }}>Dealzy</span>
+          <span style={{ color: '#cbd5e0', margin: '0 12px' }}>×</span>
+          <span style={{ fontWeight: 600, color: '#1a202c' }}>Well Chosen 房产</span>
         </div>
-        <div style={{ color: '#999', fontSize: 13, marginBottom: 8 }}>{t('footer_copyright', currentLang)}</div>
-        <div style={{ color: '#ccc', fontSize: 12 }}>Powered by AI · Made with ❤️ in Dubai</div>
+        <div style={{ color: '#718096', fontSize: 13, marginBottom: 8 }}>© 2026 Dealzy. All rights reserved.</div>
+        <div style={{ color: '#a0aec0', fontSize: 12 }}>Powered by AI · Made with ❤️ in Dubai</div>
       </Footer>
 
       <ChatWidget />
