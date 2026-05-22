@@ -59,7 +59,12 @@ const PropertyCard = ({ property }) => {
     <>
       <Card
         cover={
-          <div style={{ height: 200, overflow: 'hidden', background: '#f0f0f0' }}>
+          <div style={{ 
+            height: 220, 
+            overflow: 'hidden', 
+            background: 'linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%)',
+            position: 'relative'
+          }}>
             <img 
               alt={property.title} 
               src={getPropertyImage()} 
@@ -67,27 +72,45 @@ const PropertyCard = ({ property }) => {
               onError={() => setImageError(true)}
               loading="lazy"
             />
+            <div style={{
+              position: 'absolute',
+              top: 12,
+              left: 12,
+              background: property.type === 'rent' ? 'rgba(24,144,255,0.95)' : 'rgba(82,196,26,0.95)',
+              color: '#fff',
+              padding: '6px 14px',
+              borderRadius: 20,
+              fontSize: 13,
+              fontWeight: 600,
+              backdropFilter: 'blur(8px)'
+            }}>
+              {property.type === 'rent' ? '🏠 出租' : '💰 出售'}
+            </div>
           </div>
         }
-        style={{ cursor: 'pointer', transition: 'transform 0.2s' }}
+        hoverable
         onClick={() => setModalOpen(true)}
-        onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-4px)'}
-        onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+        style={{ 
+          cursor: 'pointer', 
+          borderRadius: 12,
+          overflow: 'hidden',
+          boxShadow: '0 4px 16px rgba(0,0,0,0.08)'
+        }}
       >
-        <div style={{ padding: '12px 0' }}>
-          <div style={{ fontWeight: 600, marginBottom: 8, fontSize: 16 }}>{property.title}</div>
-          <Space style={{ marginBottom: 8 }}>
-            <Badge color={property.type === 'rent' ? 'blue' : 'green'} text={property.type === 'rent' ? t('property_rent', currentLang) : t('property_sale', currentLang)} />
-            <span style={{ color: '#666', fontSize: 14 }}>{property.area}</span>
-          </Space>
-          <div style={{ color: '#f5222d', fontWeight: 700, fontSize: 18 }}>
-            AED {property.price?.toLocaleString()}
-            <span style={{ fontSize: 14, color: '#666', fontWeight: 400 }}>/{property.priceType || t('property_rent', currentLang)}</span>
+        <div style={{ padding: '16px 0' }}>
+          <div style={{ fontWeight: 700, marginBottom: 12, fontSize: 17, lineHeight: 1.4 }}>{property.title}</div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 12 }}>
+            <span style={{ fontSize: 13, color: '#666', background: '#f5f5f5', padding: '4px 10px', borderRadius: 12 }}>📍 {property.area}</span>
           </div>
-          <div style={{ fontSize: 13, color: '#999', marginTop: 8 }}>
-            {property.bedrooms === 0 ? t('property_studio', currentLang) : `${property.bedrooms} ${t('property_bedrooms', currentLang)}`}
-            {' • '}{property.size} {t('property_sqft', currentLang)}
-            {property.furnished ? ` • ${t('property_furnished', currentLang)}` : ` • ${t('property_unfurnished', currentLang)}`}
+          <div style={{ color: '#f5222d', fontWeight: 800, fontSize: 22 }}>
+            AED {property.price?.toLocaleString()}
+            <span style={{ fontSize: 14, color: '#999', fontWeight: 400 }}>/{property.priceType || '年'}</span>
+          </div>
+          <Divider style={{ margin: '12px 0' }} />
+          <div style={{ fontSize: 13, color: '#666', lineHeight: 1.8 }}>
+            <span style={{ marginRight: 12 }}>🏠 {property.bedrooms === 0 ? 'Studio' : `${property.bedrooms}卧室`}</span>
+            <span style={{ marginRight: 12 }}>📐 {property.size} 尺</span>
+            <span>{property.furnished ? '🛋️ 带家具' : '🏢 空房'}</span>
           </div>
         </div>
       </Card>
@@ -342,28 +365,47 @@ function App() {
         justifyContent: 'space-between',
         background: '#fff',
         padding: '0 40px',
-        boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+        boxShadow: '0 2px 12px rgba(0,0,0,0.08)',
+        position: 'sticky',
+        top: 0,
+        zIndex: 999
       }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <div style={{ fontSize: 24 }}>🏠</div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+          <div style={{ 
+            fontSize: 28, 
+            background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            fontWeight: 800
+          }}>🏠</div>
           <div>
-            <div style={{ fontWeight: 700, fontSize: 20 }}>Dealzy</div>
-            <div style={{ fontSize: 12, color: '#666' }}>
-              {currentLang === 'zh' && '迪拜房产 AI 客服'}
-              {currentLang === 'en' && 'Dubai Real Estate AI'}
-              {currentLang === 'ar' && 'نظام الذكاء الاصطناعي للعقارات'}
+            <div style={{ fontWeight: 800, fontSize: 24, background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Dealzy</div>
+            <div style={{ fontSize: 11, color: '#999', letterSpacing: '0.5px' }}>
+              {currentLang === 'zh' && '迪拜房产 AI 客服 · Close deals faster'}
+              {currentLang === 'en' && 'Dubai Real Estate AI · Close deals faster'}
+              {currentLang === 'ar' && 'نظام الذكاء الاصطناعي للعقارات · Close deals faster'}
             </div>
           </div>
         </div>
         
         <Space size="large">
-          <Button type="link" href="#/">{t('nav_home', currentLang)}</Button>
-          <Button type="link" href="#/properties">{t('nav_properties', currentLang)}</Button>
+          <Button type="link" href="#/" style={{ fontSize: 15, fontWeight: 500 }}>{t('nav_home', currentLang)}</Button>
+          <Button type="link" href="#/properties" style={{ fontSize: 15, fontWeight: 500 }}>{t('nav_properties', currentLang)}</Button>
           <Popover content={langContent} trigger="click" placement="bottomRight">
-            <Button icon={<span>{langConfig.flag}</span>}>{langConfig.name}</Button>
+            <Button icon={<span>{langConfig.flag}</span>} style={{ borderRadius: 20 }}>{langConfig.name}</Button>
           </Popover>
           <Tooltip title={t('nav_admin', currentLang)}>
-            <Button type="primary" onClick={() => navigate('#/admin')} icon={<DashboardOutlined />} style={{ background: '#722ed1' }}>
+            <Button 
+              type="primary" 
+              onClick={() => navigate('#/admin')} 
+              icon={<DashboardOutlined />} 
+              style={{ 
+                background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                border: 'none',
+                borderRadius: 20,
+                padding: '0 20px'
+              }}
+            >
               {t('nav_admin', currentLang)}
             </Button>
           </Tooltip>
@@ -373,65 +415,192 @@ function App() {
       <Content>
         <div style={{
           background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-          padding: '80px 40px',
+          padding: '100px 40px 80px',
           textAlign: 'center',
           color: '#fff',
-          direction: 'ltr'
+          direction: 'ltr',
+          position: 'relative',
+          overflow: 'hidden'
         }}>
-          <h1 style={{ fontSize: 48, marginBottom: 16, fontWeight: 700 }}>{t('hero_slogan', currentLang)}</h1>
-          <p style={{ fontSize: 20, marginBottom: 40, opacity: 0.9 }}>{t('hero_subtitle', currentLang)}</p>
-          <Space size="large">
-            <Button type="primary" size="large" href="#/properties" style={{ height: 50, paddingHorizontal: 40 }}>
-              {t('hero_browse', currentLang)}
-            </Button>
-            <Button size="large" onClick={() => navigate('#/admin')} style={{ height: 50, paddingHorizontal: 40, background: 'rgba(255,255,255,0.2)', color: '#fff' }}>
-              {t('hero_admin', currentLang)}
-            </Button>
-          </Space>
+          {/* 装饰背景 */}
+          <div style={{
+            position: 'absolute',
+            top: -50,
+            left: -50,
+            width: 300,
+            height: 300,
+            background: 'rgba(255,255,255,0.1)',
+            borderRadius: '50%'
+          }} />
+          <div style={{
+            position: 'absolute',
+            bottom: -80,
+            right: -80,
+            width: 400,
+            height: 400,
+            background: 'rgba(255,255,255,0.08)',
+            borderRadius: '50%'
+          }} />
+          
+          <div style={{ position: 'relative', zIndex: 1 }}>
+            <div style={{ 
+              fontSize: 64, 
+              marginBottom: 24, 
+              fontWeight: 800,
+              textShadow: '0 2px 20px rgba(0,0,0,0.2)'
+            }}>{t('hero_slogan', currentLang)}</div>
+            <p style={{ 
+              fontSize: 22, 
+              marginBottom: 48, 
+              opacity: 0.95,
+              maxWidth: 600,
+              margin: '0 auto 48px',
+              lineHeight: 1.6
+            }}>{t('hero_subtitle', currentLang)}</p>
+            <Space size="large">
+              <Button 
+                type="primary" 
+                size="large" 
+                href="#/properties" 
+                style={{ 
+                  height: 56, 
+                  padding: '0 48px',
+                  fontSize: 18,
+                  fontWeight: 600,
+                  borderRadius: 28,
+                  background: '#fff',
+                  color: '#667eea',
+                  border: 'none',
+                  boxShadow: '0 8px 24px rgba(0,0,0,0.15)'
+                }}
+              >
+                {t('hero_browse', currentLang)}
+              </Button>
+              <Button 
+                size="large" 
+                onClick={() => navigate('#/admin')} 
+                style={{ 
+                  height: 56, 
+                  padding: '0 48px',
+                  fontSize: 18,
+                  fontWeight: 600,
+                  borderRadius: 28,
+                  background: 'rgba(255,255,255,0.15)',
+                  color: '#fff',
+                  border: '2px solid rgba(255,255,255,0.5)'
+                }}
+              >
+                {t('hero_admin', currentLang)}
+              </Button>
+            </Space>
+          </div>
         </div>
 
-        <div style={{ padding: '40px 24px' }}>
-          <h2 style={{ textAlign: 'center', marginBottom: 40 }}>{t('section_properties', currentLang)}</h2>
-          <Row gutter={[24, 24]}>
+        <div style={{ padding: '60px 24px', maxWidth: 1400, margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: 48 }}>
+            <h2 style={{ fontSize: 36, marginBottom: 12, fontWeight: 700 }}>{t('section_properties', currentLang)}</h2>
+            <p style={{ fontSize: 16, color: '#999' }}>精选迪拜优质房源，AI 智能匹配您的需求</p>
+          </div>
+          <Row gutter={[32, 32]}>
             {mockProperties.map(property => (
-              <Col key={property.id} xs={24} sm={12} lg={8}>
+              <Col key={property.id} xs={24} sm={12} lg={8} xl={6}>
                 <PropertyCard property={property} />
               </Col>
             ))}
           </Row>
         </div>
 
-        <div style={{ padding: '60px 24px', background: '#f9fafb' }}>
-          <h2 style={{ textAlign: 'center', marginBottom: 40 }}>{t('section_why', currentLang)}</h2>
-          <Row gutter={[40, 40]}>
-            <Col xs={24} sm={8}>
-              <div style={{ textAlign: 'center' }}>
-                <div style={{ fontSize: 48, marginBottom: 16 }}>⚡</div>
-                <h3>{t('why_fast_title', currentLang)}</h3>
-                <p style={{ color: '#666' }}>{t('why_fast_desc', currentLang)}</p>
-              </div>
-            </Col>
-            <Col xs={24} sm={8}>
-              <div style={{ textAlign: 'center' }}>
-                <div style={{ fontSize: 48, marginBottom: 16 }}>🌍</div>
-                <h3>{t('why_multilang_title', currentLang)}</h3>
-                <p style={{ color: '#666' }}>{t('why_multilang_desc', currentLang)}</p>
-              </div>
-            </Col>
-            <Col xs={24} sm={8}>
-              <div style={{ textAlign: 'center' }}>
-                <div style={{ fontSize: 48, marginBottom: 16 }}>💰</div>
-                <h3>{t('why_transparent_title', currentLang)}</h3>
-                <p style={{ color: '#666' }}>{t('why_transparent_desc', currentLang)}</p>
-              </div>
-            </Col>
-          </Row>
+        <div style={{ padding: '80px 24px', background: 'linear-gradient(180deg, #f9fafb 0%, #fff 100%)' }}>
+          <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+            <div style={{ textAlign: 'center', marginBottom: 60 }}>
+              <h2 style={{ fontSize: 36, marginBottom: 12, fontWeight: 700 }}>{t('section_why', currentLang)}</h2>
+              <p style={{ fontSize: 16, color: '#999' }}>为什么选择 Dealzy？我们让房产交易更简单</p>
+            </div>
+            <Row gutter={[48, 48]}>
+              <Col xs={24} sm={8}>
+                <div style={{ 
+                  textAlign: 'center', 
+                  padding: 40,
+                  background: '#fff',
+                  borderRadius: 16,
+                  boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+                  transition: 'transform 0.3s'
+                }}>
+                  <div style={{ 
+                    fontSize: 56, 
+                    marginBottom: 20,
+                    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent'
+                  }}>⚡</div>
+                  <h3 style={{ fontSize: 20, marginBottom: 12, fontWeight: 600 }}>{t('why_fast_title', currentLang)}</h3>
+                  <p style={{ color: '#666', lineHeight: 1.8, fontSize: 15 }}>{t('why_fast_desc', currentLang)}</p>
+                </div>
+              </Col>
+              <Col xs={24} sm={8}>
+                <div style={{ 
+                  textAlign: 'center', 
+                  padding: 40,
+                  background: '#fff',
+                  borderRadius: 16,
+                  boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+                  transition: 'transform 0.3s'
+                }}>
+                  <div style={{ 
+                    fontSize: 56, 
+                    marginBottom: 20,
+                    background: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent'
+                  }}>🌍</div>
+                  <h3 style={{ fontSize: 20, marginBottom: 12, fontWeight: 600 }}>{t('why_multilang_title', currentLang)}</h3>
+                  <p style={{ color: '#666', lineHeight: 1.8, fontSize: 15 }}>{t('why_multilang_desc', currentLang)}</p>
+                </div>
+              </Col>
+              <Col xs={24} sm={8}>
+                <div style={{ 
+                  textAlign: 'center', 
+                  padding: 40,
+                  background: '#fff',
+                  borderRadius: 16,
+                  boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+                  transition: 'transform 0.3s'
+                }}>
+                  <div style={{ 
+                    fontSize: 56, 
+                    marginBottom: 20,
+                    background: 'linear-gradient(135deg, #4facfe 0%, #43e97b 100%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent'
+                  }}>💰</div>
+                  <h3 style={{ fontSize: 20, marginBottom: 12, fontWeight: 600 }}>{t('why_transparent_title', currentLang)}</h3>
+                  <p style={{ color: '#666', lineHeight: 1.8, fontSize: 15 }}>{t('why_transparent_desc', currentLang)}</p>
+                </div>
+              </Col>
+            </Row>
+          </div>
         </div>
       </Content>
 
-      <Footer style={{ textAlign: 'center', background: '#fff' }}>
-        <div style={{ marginBottom: 16 }}><strong>Dealzy</strong> × <strong>Well Chosen 房产</strong></div>
-        <div style={{ color: '#666' }}>{t('footer_copyright', currentLang)}</div>
+      <Footer style={{ 
+        textAlign: 'center', 
+        background: 'linear-gradient(180deg, #fff 0%, #f9fafb 100%)',
+        padding: '40px 24px',
+        borderTop: '1px solid #e8e8e8'
+      }}>
+        <div style={{ marginBottom: 16 }}>
+          <span style={{ 
+            fontSize: 20, 
+            fontWeight: 800,
+            background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent'
+          }}>Dealzy</span>
+          <span style={{ color: '#999', margin: '0 12px' }}>×</span>
+          <span style={{ fontWeight: 600, color: '#333' }}>Well Chosen 房产</span>
+        </div>
+        <div style={{ color: '#999', fontSize: 13, marginBottom: 8 }}>{t('footer_copyright', currentLang)}</div>
+        <div style={{ color: '#ccc', fontSize: 12 }}>Powered by AI · Made with ❤️ in Dubai</div>
       </Footer>
 
       <ChatWidget />
