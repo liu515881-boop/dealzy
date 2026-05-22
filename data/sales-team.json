@@ -1,0 +1,85 @@
+{
+  "version": "1.0",
+  "updatedAt": "2026-05-21",
+  "team": [
+    {
+      "id": "sales-001",
+      "name": "Ahmed Hassan",
+      "nameZh": "艾哈迈德",
+      "role": "Senior Property Consultant",
+      "phone": "+971 50 111 2222",
+      "whatsapp": "+971 50 111 2222",
+      "email": "ahmed@dealzy.ae",
+      "languages": ["English", "Arabic"],
+      "specialties": ["DSO", "International City"],
+      "active": true,
+      "joinedAt": "2025-01-15"
+    },
+    {
+      "id": "sales-002",
+      "name": "Sarah Johnson",
+      "nameZh": "莎拉",
+      "role": "Property Consultant",
+      "phone": "+971 50 222 3333",
+      "whatsapp": "+971 50 222 3333",
+      "email": "sarah@dealzy.ae",
+      "languages": ["English", "Hindi"],
+      "specialties": ["JVC", "Dubai Marina"],
+      "active": true,
+      "joinedAt": "2025-03-20"
+    },
+    {
+      "id": "sales-003",
+      "name": "Mohammed Ali",
+      "nameZh": "穆罕默德",
+      "role": "Senior Property Consultant",
+      "phone": "+971 50 333 4444",
+      "whatsapp": "+971 50 333 4444",
+      "email": "mohammed@dealzy.ae",
+      "languages": ["English", "Arabic", "Urdu"],
+      "specialties": ["DSO", "JVC"],
+      "active": true,
+      "joinedAt": "2024-11-10"
+    },
+    {
+      "id": "sales-004",
+      "name": "Li Wei",
+      "nameZh": "李伟",
+      "role": "Chinese Market Specialist",
+      "phone": "+971 50 444 5555",
+      "whatsapp": "+971 50 444 5555",
+      "email": "liwei@dealzy.ae",
+      "languages": ["Chinese", "English"],
+      "specialties": ["International City", "DSO"],
+      "active": true,
+      "joinedAt": "2025-06-01"
+    },
+    {
+      "id": "sales-005",
+      "name": "Fatima Al Zaabi",
+      "nameZh": "法蒂玛",
+      "role": "VIP Property Consultant",
+      "phone": "+971 50 555 6666",
+      "whatsapp": "+971 50 555 6666",
+      "email": "fatima@dealzy.ae",
+      "languages": ["Arabic", "English"],
+      "specialties": ["Dubai Marina", "Downtown", "JVC"],
+      "active": true,
+      "joinedAt": "2024-08-15"
+    }
+  ],
+  "assignmentRules": {
+    "default": "round-robin",
+    "byArea": {
+      "DSO": ["sales-001", "sales-003", "sales-004"],
+      "JVC": ["sales-002", "sales-003", "sales-005"],
+      "International City": ["sales-001", "sales-004"]
+    },
+    "byLanguage": {
+      "Chinese": ["sales-004"],
+      "Arabic": ["sales-001", "sales-003", "sales-005"],
+      "Hindi": ["sales-002"],
+      "Urdu": ["sales-003"]
+    }
+  }
+}

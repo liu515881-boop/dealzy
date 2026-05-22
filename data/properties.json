@@ -13,10 +13,22 @@
     "furnished": true,
     "building": "Silicon Gate",
     "image": "https://images.bayut.com/thumbs/285959180.jpg",
-    "amenities": ["泳池", "健身房", "车位", "24 小时安保"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "24 小时安保"
+    ],
     "description": "DSO 核心位置，近 Dubai Academy，带全套家具，拎包入住",
     "available": "2026-06-01",
-    "contact": "+971 50 123 4501"
+    "contact": "+971 50 123 4501",
+    "agentId": "sales-001",
+    "agentName": "Ahmed Hassan",
+    "agentNameZh": "艾哈迈德",
+    "agentPhone": "+971 50 111 2222",
+    "agentWhatsapp": "+971 50 111 2222",
+    "agentEmail": "ahmed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 2,
@@ -32,10 +44,22 @@
     "furnished": false,
     "building": "Silicon Gate",
     "image": "https://images.bayut.com/thumbs/285959181.jpg",
-    "amenities": ["泳池", "健身房", "车位", "儿童乐园"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "儿童乐园"
+    ],
     "description": "宽敞 1BHK，阳台景观好，适合单身或小家庭",
     "available": "2026-05-25",
-    "contact": "+971 50 123 4502"
+    "contact": "+971 50 123 4502",
+    "agentId": "sales-003",
+    "agentName": "Mohammed Ali",
+    "agentNameZh": "穆罕默德",
+    "agentPhone": "+971 50 333 4444",
+    "agentWhatsapp": "+971 50 333 4444",
+    "agentEmail": "mohammed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 3,
@@ -51,10 +75,21 @@
     "furnished": true,
     "building": "Cedar Court",
     "image": "https://images.bayut.com/thumbs/285959182.jpg",
-    "amenities": ["泳池", "健身房", "车位"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位"
+    ],
     "description": "现代化装修，厨房设备齐全，近地铁站",
     "available": "2026-06-15",
-    "contact": "+971 50 123 4503"
+    "contact": "+971 50 123 4503",
+    "agentId": "sales-004",
+    "agentName": "Li Wei",
+    "agentNameZh": "李伟",
+    "agentPhone": "+971 50 444 5555",
+    "agentWhatsapp": "+971 50 444 5555",
+    "agentEmail": "liwei@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 4,
@@ -70,10 +105,22 @@
     "furnished": true,
     "building": "Cedar Court",
     "image": "https://images.bayut.com/thumbs/285959183.jpg",
-    "amenities": ["泳池", "健身房", "车位", "桑拿"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "桑拿"
+    ],
     "description": "豪华装修，高端家具，视野开阔",
     "available": "2026-06-01",
-    "contact": "+971 50 123 4504"
+    "contact": "+971 50 123 4504",
+    "agentId": "sales-001",
+    "agentName": "Ahmed Hassan",
+    "agentNameZh": "艾哈迈德",
+    "agentPhone": "+971 50 111 2222",
+    "agentWhatsapp": "+971 50 111 2222",
+    "agentEmail": "ahmed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 5,
@@ -89,10 +136,21 @@
     "furnished": false,
     "building": "Maple",
     "image": "https://images.bayut.com/thumbs/285959184.jpg",
-    "amenities": ["泳池", "车位", "24 小时安保"],
+    "amenities": [
+      "泳池",
+      "车位",
+      "24 小时安保"
+    ],
     "description": "性价比高，适合预算有限的租客",
     "available": "2026-05-20",
-    "contact": "+971 50 123 4505"
+    "contact": "+971 50 123 4505",
+    "agentId": "sales-003",
+    "agentName": "Mohammed Ali",
+    "agentNameZh": "穆罕默德",
+    "agentPhone": "+971 50 333 4444",
+    "agentWhatsapp": "+971 50 333 4444",
+    "agentEmail": "mohammed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 6,
@@ -108,10 +166,21 @@
     "furnished": false,
     "building": "Maple",
     "image": "https://images.bayut.com/thumbs/285959185.jpg",
-    "amenities": ["泳池", "健身房", "车位"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位"
+    ],
     "description": "采光好，布局合理，安静社区",
     "available": "2026-06-10",
-    "contact": "+971 50 123 4506"
+    "contact": "+971 50 123 4506",
+    "agentId": "sales-004",
+    "agentName": "Li Wei",
+    "agentNameZh": "李伟",
+    "agentPhone": "+971 50 444 5555",
+    "agentWhatsapp": "+971 50 444 5555",
+    "agentEmail": "liwei@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 7,
@@ -127,10 +196,22 @@
     "furnished": true,
     "building": "Spring Gate",
     "image": "https://images.bayut.com/thumbs/285959186.jpg",
-    "amenities": ["泳池", "健身房", "车位", "便利店"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "便利店"
+    ],
     "description": "温馨舒适，家具全新，楼下有超市",
     "available": "2026-06-05",
-    "contact": "+971 50 123 4507"
+    "contact": "+971 50 123 4507",
+    "agentId": "sales-001",
+    "agentName": "Ahmed Hassan",
+    "agentNameZh": "艾哈迈德",
+    "agentPhone": "+971 50 111 2222",
+    "agentWhatsapp": "+971 50 111 2222",
+    "agentEmail": "ahmed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 8,
@@ -146,10 +227,23 @@
     "furnished": true,
     "building": "Spring Gate",
     "image": "https://images.bayut.com/thumbs/285959187.jpg",
-    "amenities": ["泳池", "健身房", "车位", "儿童乐园", "BBQ 区"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "儿童乐园",
+      "BBQ 区"
+    ],
     "description": "高端公寓，设施齐全，适合家庭",
     "available": "2026-07-01",
-    "contact": "+971 50 123 4508"
+    "contact": "+971 50 123 4508",
+    "agentId": "sales-003",
+    "agentName": "Mohammed Ali",
+    "agentNameZh": "穆罕默德",
+    "agentPhone": "+971 50 333 4444",
+    "agentWhatsapp": "+971 50 333 4444",
+    "agentEmail": "mohammed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 9,
@@ -165,10 +259,21 @@
     "furnished": false,
     "building": "Liv Residency",
     "image": "https://images.bayut.com/thumbs/285959188.jpg",
-    "amenities": ["泳池", "健身房", "车位"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位"
+    ],
     "description": "经济实惠，基本设施齐全",
     "available": "2026-05-22",
-    "contact": "+971 50 123 4509"
+    "contact": "+971 50 123 4509",
+    "agentId": "sales-004",
+    "agentName": "Li Wei",
+    "agentNameZh": "李伟",
+    "agentPhone": "+971 50 444 5555",
+    "agentWhatsapp": "+971 50 444 5555",
+    "agentEmail": "liwei@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 10,
@@ -184,10 +289,22 @@
     "furnished": false,
     "building": "Liv Residency",
     "image": "https://images.bayut.com/thumbs/285959189.jpg",
-    "amenities": ["泳池", "健身房", "车位", "24 小时安保"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "24 小时安保"
+    ],
     "description": "优雅设计，空间利用率高",
     "available": "2026-06-08",
-    "contact": "+971 50 123 4510"
+    "contact": "+971 50 123 4510",
+    "agentId": "sales-001",
+    "agentName": "Ahmed Hassan",
+    "agentNameZh": "艾哈迈德",
+    "agentPhone": "+971 50 111 2222",
+    "agentWhatsapp": "+971 50 111 2222",
+    "agentEmail": "ahmed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 11,
@@ -203,10 +320,22 @@
     "furnished": true,
     "building": "Techno Hub",
     "image": "https://images.bayut.com/thumbs/285959190.jpg",
-    "amenities": ["泳池", "健身房", "车位", "阳台"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "阳台"
+    ],
     "description": "带阳台，视野好，近科技园区",
     "available": "2026-06-12",
-    "contact": "+971 50 123 4511"
+    "contact": "+971 50 123 4511",
+    "agentId": "sales-003",
+    "agentName": "Mohammed Ali",
+    "agentNameZh": "穆罕默德",
+    "agentPhone": "+971 50 333 4444",
+    "agentWhatsapp": "+971 50 333 4444",
+    "agentEmail": "mohammed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 12,
@@ -222,10 +351,22 @@
     "furnished": true,
     "building": "Techno Hub",
     "image": "https://images.bayut.com/thumbs/285959191.jpg",
-    "amenities": ["泳池", "健身房", "车位", "书房"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "书房"
+    ],
     "description": "大面积 1BHK，带独立书房",
     "available": "2026-06-20",
-    "contact": "+971 50 123 4512"
+    "contact": "+971 50 123 4512",
+    "agentId": "sales-004",
+    "agentName": "Li Wei",
+    "agentNameZh": "李伟",
+    "agentPhone": "+971 50 444 5555",
+    "agentWhatsapp": "+971 50 444 5555",
+    "agentEmail": "liwei@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 13,
@@ -241,10 +382,21 @@
     "furnished": false,
     "building": "Oasis Square",
     "image": "https://images.bayut.com/thumbs/285959192.jpg",
-    "amenities": ["泳池", "车位", "便利店"],
+    "amenities": [
+      "泳池",
+      "车位",
+      "便利店"
+    ],
     "description": "紧凑实用，适合单身人士",
     "available": "2026-05-28",
-    "contact": "+971 50 123 4513"
+    "contact": "+971 50 123 4513",
+    "agentId": "sales-001",
+    "agentName": "Ahmed Hassan",
+    "agentNameZh": "艾哈迈德",
+    "agentPhone": "+971 50 111 2222",
+    "agentWhatsapp": "+971 50 111 2222",
+    "agentEmail": "ahmed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 14,
@@ -260,10 +412,21 @@
     "furnished": false,
     "building": "Oasis Square",
     "image": "https://images.bayut.com/thumbs/285959193.jpg",
-    "amenities": ["泳池", "健身房", "车位"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位"
+    ],
     "description": "新装修，厨房卫生间全新",
     "available": "2026-06-03",
-    "contact": "+971 50 123 4514"
+    "contact": "+971 50 123 4514",
+    "agentId": "sales-003",
+    "agentName": "Mohammed Ali",
+    "agentNameZh": "穆罕默德",
+    "agentPhone": "+971 50 333 4444",
+    "agentWhatsapp": "+971 50 333 4444",
+    "agentEmail": "mohammed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 15,
@@ -279,10 +442,22 @@
     "furnished": true,
     "building": "Apex",
     "image": "https://images.bayut.com/thumbs/285959194.jpg",
-    "amenities": ["泳池", "健身房", "车位", "桑拿"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "桑拿"
+    ],
     "description": "精装公寓，品牌家具",
     "available": "2026-06-18",
-    "contact": "+971 50 123 4515"
+    "contact": "+971 50 123 4515",
+    "agentId": "sales-004",
+    "agentName": "Li Wei",
+    "agentNameZh": "李伟",
+    "agentPhone": "+971 50 444 5555",
+    "agentWhatsapp": "+971 50 444 5555",
+    "agentEmail": "liwei@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 16,
@@ -298,10 +473,22 @@
     "furnished": true,
     "building": "Apex",
     "image": "https://images.bayut.com/thumbs/285959195.jpg",
-    "amenities": ["泳池", "健身房", "车位", "景观阳台"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "景观阳台"
+    ],
     "description": " corner 单位，双面采光",
     "available": "2026-07-05",
-    "contact": "+971 50 123 4516"
+    "contact": "+971 50 123 4516",
+    "agentId": "sales-001",
+    "agentName": "Ahmed Hassan",
+    "agentNameZh": "艾哈迈德",
+    "agentPhone": "+971 50 111 2222",
+    "agentWhatsapp": "+971 50 111 2222",
+    "agentEmail": "ahmed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 17,
@@ -317,10 +504,21 @@
     "furnished": false,
     "building": "Metro View",
     "image": "https://images.bayut.com/thumbs/285959196.jpg",
-    "amenities": ["泳池", "车位", "近地铁"],
+    "amenities": [
+      "泳池",
+      "车位",
+      "近地铁"
+    ],
     "description": "近地铁站，交通便利",
     "available": "2026-05-30",
-    "contact": "+971 50 123 4517"
+    "contact": "+971 50 123 4517",
+    "agentId": "sales-003",
+    "agentName": "Mohammed Ali",
+    "agentNameZh": "穆罕默德",
+    "agentPhone": "+971 50 333 4444",
+    "agentWhatsapp": "+971 50 333 4444",
+    "agentEmail": "mohammed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 18,
@@ -336,10 +534,22 @@
     "furnished": false,
     "building": "Family Homes",
     "image": "https://images.bayut.com/thumbs/285959197.jpg",
-    "amenities": ["泳池", "健身房", "车位", "儿童乐园"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "儿童乐园"
+    ],
     "description": "适合小家庭，近学校",
     "available": "2026-06-15",
-    "contact": "+971 50 123 4518"
+    "contact": "+971 50 123 4518",
+    "agentId": "sales-004",
+    "agentName": "Li Wei",
+    "agentNameZh": "李伟",
+    "agentPhone": "+971 50 444 5555",
+    "agentWhatsapp": "+971 50 444 5555",
+    "agentEmail": "liwei@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 19,
@@ -355,10 +565,22 @@
     "furnished": true,
     "building": "Sky Tower",
     "image": "https://images.bayut.com/thumbs/285959198.jpg",
-    "amenities": ["泳池", "健身房", "车位", "高层景观"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "高层景观"
+    ],
     "description": "高楼层，视野无遮挡",
     "available": "2026-06-22",
-    "contact": "+971 50 123 4519"
+    "contact": "+971 50 123 4519",
+    "agentId": "sales-001",
+    "agentName": "Ahmed Hassan",
+    "agentNameZh": "艾哈迈德",
+    "agentPhone": "+971 50 111 2222",
+    "agentWhatsapp": "+971 50 111 2222",
+    "agentEmail": "ahmed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 20,
@@ -374,10 +596,22 @@
     "furnished": false,
     "building": "Sky Tower",
     "image": "https://images.bayut.com/thumbs/285959199.jpg",
-    "amenities": ["泳池", "健身房", "车位", "储物间"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "储物间"
+    ],
     "description": "宽敞明亮，带储物间",
     "available": "2026-07-10",
-    "contact": "+971 50 123 4520"
+    "contact": "+971 50 123 4520",
+    "agentId": "sales-003",
+    "agentName": "Mohammed Ali",
+    "agentNameZh": "穆罕默德",
+    "agentPhone": "+971 50 333 4444",
+    "agentWhatsapp": "+971 50 333 4444",
+    "agentEmail": "mohammed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 21,
@@ -393,10 +627,22 @@
     "furnished": true,
     "building": "Panorama Community",
     "image": "https://images.bayut.com/thumbs/285959200.jpg",
-    "amenities": ["泳池", "健身房", "车位", "公园"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "公园"
+    ],
     "description": "JVC 核心位置，绿化好",
     "available": "2026-06-01",
-    "contact": "+971 50 123 4521"
+    "contact": "+971 50 123 4521",
+    "agentId": "sales-005",
+    "agentName": "Fatima Al Zaabi",
+    "agentNameZh": "法蒂玛",
+    "agentPhone": "+971 50 555 6666",
+    "agentWhatsapp": "+971 50 555 6666",
+    "agentEmail": "fatima@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 22,
@@ -412,10 +658,22 @@
     "furnished": false,
     "building": "Panorama Community",
     "image": "https://images.bayut.com/thumbs/285959201.jpg",
-    "amenities": ["泳池", "健身房", "车位", "儿童乐园"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "儿童乐园"
+    ],
     "description": "现代化装修，社区成熟",
     "available": "2026-06-08",
-    "contact": "+971 50 123 4522"
+    "contact": "+971 50 123 4522",
+    "agentId": "sales-002",
+    "agentName": "Sarah Johnson",
+    "agentNameZh": "莎拉",
+    "agentPhone": "+971 50 222 3333",
+    "agentWhatsapp": "+971 50 222 3333",
+    "agentEmail": "sarah@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 23,
@@ -431,10 +689,23 @@
     "furnished": false,
     "building": "Panorama Community",
     "image": "https://images.bayut.com/thumbs/285959202.jpg",
-    "amenities": ["泳池", "健身房", "车位", "儿童乐园", "BBQ 区"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "儿童乐园",
+      "BBQ 区"
+    ],
     "description": "大两房，适合家庭居住",
     "available": "2026-06-15",
-    "contact": "+971 50 123 4523"
+    "contact": "+971 50 123 4523",
+    "agentId": "sales-003",
+    "agentName": "Mohammed Ali",
+    "agentNameZh": "穆罕默德",
+    "agentPhone": "+971 50 333 4444",
+    "agentWhatsapp": "+971 50 333 4444",
+    "agentEmail": "mohammed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 24,
@@ -450,10 +721,22 @@
     "furnished": true,
     "building": "Strata Tower",
     "image": "https://images.bayut.com/thumbs/285959203.jpg",
-    "amenities": ["泳池", "健身房", "车位", "便利店"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "便利店"
+    ],
     "description": "带家具，拎包入住",
     "available": "2026-05-25",
-    "contact": "+971 50 123 4524"
+    "contact": "+971 50 123 4524",
+    "agentId": "sales-005",
+    "agentName": "Fatima Al Zaabi",
+    "agentNameZh": "法蒂玛",
+    "agentPhone": "+971 50 555 6666",
+    "agentWhatsapp": "+971 50 555 6666",
+    "agentEmail": "fatima@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 25,
@@ -469,10 +752,23 @@
     "furnished": true,
     "building": "Strata Tower",
     "image": "https://images.bayut.com/thumbs/285959204.jpg",
-    "amenities": ["泳池", "健身房", "车位", "桑拿", "景观阳台"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "桑拿",
+      "景观阳台"
+    ],
     "description": "豪华装修，高端社区",
     "available": "2026-06-20",
-    "contact": "+971 50 123 4525"
+    "contact": "+971 50 123 4525",
+    "agentId": "sales-002",
+    "agentName": "Sarah Johnson",
+    "agentNameZh": "莎拉",
+    "agentPhone": "+971 50 222 3333",
+    "agentWhatsapp": "+971 50 222 3333",
+    "agentEmail": "sarah@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 26,
@@ -488,10 +784,22 @@
     "furnished": false,
     "building": "Circle Residency",
     "image": "https://images.bayut.com/thumbs/285959205.jpg",
-    "amenities": ["泳池", "健身房", "车位", "儿童乐园"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "儿童乐园"
+    ],
     "description": "性价比高，适合家庭",
     "available": "2026-06-05",
-    "contact": "+971 50 123 4526"
+    "contact": "+971 50 123 4526",
+    "agentId": "sales-003",
+    "agentName": "Mohammed Ali",
+    "agentNameZh": "穆罕默德",
+    "agentPhone": "+971 50 333 4444",
+    "agentWhatsapp": "+971 50 333 4444",
+    "agentEmail": "mohammed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 27,
@@ -507,10 +815,22 @@
     "furnished": false,
     "building": "Garden View",
     "image": "https://images.bayut.com/thumbs/285959206.jpg",
-    "amenities": ["泳池", "健身房", "车位", "花园景观"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "花园景观"
+    ],
     "description": "花园景观，环境安静",
     "available": "2026-06-12",
-    "contact": "+971 50 123 4527"
+    "contact": "+971 50 123 4527",
+    "agentId": "sales-005",
+    "agentName": "Fatima Al Zaabi",
+    "agentNameZh": "法蒂玛",
+    "agentPhone": "+971 50 555 6666",
+    "agentWhatsapp": "+971 50 555 6666",
+    "agentEmail": "fatima@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 28,
@@ -526,10 +846,22 @@
     "furnished": false,
     "building": "Garden View",
     "image": "https://images.bayut.com/thumbs/285959207.jpg",
-    "amenities": ["泳池", "健身房", "车位", "阳台"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "阳台"
+    ],
     "description": "采光好，布局合理",
     "available": "2026-06-28",
-    "contact": "+971 50 123 4528"
+    "contact": "+971 50 123 4528",
+    "agentId": "sales-002",
+    "agentName": "Sarah Johnson",
+    "agentNameZh": "莎拉",
+    "agentPhone": "+971 50 222 3333",
+    "agentWhatsapp": "+971 50 222 3333",
+    "agentEmail": "sarah@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 29,
@@ -545,10 +877,23 @@
     "furnished": false,
     "building": "JVC Heights",
     "image": "https://images.bayut.com/thumbs/285959208.jpg",
-    "amenities": ["泳池", "健身房", "车位", "儿童乐园", "健身房"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "儿童乐园",
+      "健身房"
+    ],
     "description": "大面积两房，三卫生间",
     "available": "2026-07-01",
-    "contact": "+971 50 123 4529"
+    "contact": "+971 50 123 4529",
+    "agentId": "sales-003",
+    "agentName": "Mohammed Ali",
+    "agentNameZh": "穆罕默德",
+    "agentPhone": "+971 50 333 4444",
+    "agentWhatsapp": "+971 50 333 4444",
+    "agentEmail": "mohammed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 30,
@@ -564,10 +909,22 @@
     "furnished": true,
     "building": "JVC Heights",
     "image": "https://images.bayut.com/thumbs/285959209.jpg",
-    "amenities": ["泳池", "健身房", "车位", "高端家具"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "高端家具"
+    ],
     "description": "高端公寓，品质生活",
     "available": "2026-06-18",
-    "contact": "+971 50 123 4530"
+    "contact": "+971 50 123 4530",
+    "agentId": "sales-005",
+    "agentName": "Fatima Al Zaabi",
+    "agentNameZh": "法蒂玛",
+    "agentPhone": "+971 50 555 6666",
+    "agentWhatsapp": "+971 50 555 6666",
+    "agentEmail": "fatima@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 31,
@@ -583,10 +940,22 @@
     "furnished": false,
     "building": "Mall Residence",
     "image": "https://images.bayut.com/thumbs/285959210.jpg",
-    "amenities": ["泳池", "健身房", "车位", "近商场"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "近商场"
+    ],
     "description": "近购物中心，生活便利",
     "available": "2026-06-25",
-    "contact": "+971 50 123 4531"
+    "contact": "+971 50 123 4531",
+    "agentId": "sales-002",
+    "agentName": "Sarah Johnson",
+    "agentNameZh": "莎拉",
+    "agentPhone": "+971 50 222 3333",
+    "agentWhatsapp": "+971 50 222 3333",
+    "agentEmail": "sarah@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 32,
@@ -602,10 +971,23 @@
     "furnished": false,
     "building": "Mall Residence",
     "image": "https://images.bayut.com/thumbs/285959211.jpg",
-    "amenities": ["泳池", "健身房", "车位", "儿童乐园", "近学校"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "儿童乐园",
+      "近学校"
+    ],
     "description": "适合家庭，近学校商场",
     "available": "2026-07-05",
-    "contact": "+971 50 123 4532"
+    "contact": "+971 50 123 4532",
+    "agentId": "sales-003",
+    "agentName": "Mohammed Ali",
+    "agentNameZh": "穆罕默德",
+    "agentPhone": "+971 50 333 4444",
+    "agentWhatsapp": "+971 50 333 4444",
+    "agentEmail": "mohammed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 33,
@@ -621,10 +1003,21 @@
     "furnished": false,
     "building": "Compact Homes",
     "image": "https://images.bayut.com/thumbs/285959212.jpg",
-    "amenities": ["泳池", "车位", "24 小时安保"],
+    "amenities": [
+      "泳池",
+      "车位",
+      "24 小时安保"
+    ],
     "description": "紧凑实用，预算友好",
     "available": "2026-05-30",
-    "contact": "+971 50 123 4533"
+    "contact": "+971 50 123 4533",
+    "agentId": "sales-005",
+    "agentName": "Fatima Al Zaabi",
+    "agentNameZh": "法蒂玛",
+    "agentPhone": "+971 50 555 6666",
+    "agentWhatsapp": "+971 50 555 6666",
+    "agentEmail": "fatima@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 34,
@@ -640,10 +1033,22 @@
     "furnished": false,
     "building": "Compact Homes",
     "image": "https://images.bayut.com/thumbs/285959213.jpg",
-    "amenities": ["泳池", "健身房", "车位", "新装修"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "新装修"
+    ],
     "description": "新装修，全新家电",
     "available": "2026-06-10",
-    "contact": "+971 50 123 4534"
+    "contact": "+971 50 123 4534",
+    "agentId": "sales-002",
+    "agentName": "Sarah Johnson",
+    "agentNameZh": "莎拉",
+    "agentPhone": "+971 50 222 3333",
+    "agentWhatsapp": "+971 50 222 3333",
+    "agentEmail": "sarah@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 35,
@@ -659,10 +1064,22 @@
     "furnished": true,
     "building": "Corner Tower",
     "image": "https://images.bayut.com/thumbs/285959214.jpg",
-    "amenities": ["泳池", "健身房", "车位", "双面景观"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "双面景观"
+    ],
     "description": " corner 单位，视野开阔",
     "available": "2026-07-15",
-    "contact": "+971 50 123 4535"
+    "contact": "+971 50 123 4535",
+    "agentId": "sales-003",
+    "agentName": "Mohammed Ali",
+    "agentNameZh": "穆罕默德",
+    "agentPhone": "+971 50 333 4444",
+    "agentWhatsapp": "+971 50 333 4444",
+    "agentEmail": "mohammed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 36,
@@ -678,10 +1095,20 @@
     "furnished": false,
     "building": "China Cluster",
     "image": "https://images.bayut.com/thumbs/285959215.jpg",
-    "amenities": ["车位", "近中国城"],
+    "amenities": [
+      "车位",
+      "近中国城"
+    ],
     "description": "中国城旁边，中餐馆多",
     "available": "2026-05-20",
-    "contact": "+971 50 123 4536"
+    "contact": "+971 50 123 4536",
+    "agentId": "sales-001",
+    "agentName": "Ahmed Hassan",
+    "agentNameZh": "艾哈迈德",
+    "agentPhone": "+971 50 111 2222",
+    "agentWhatsapp": "+971 50 111 2222",
+    "agentEmail": "ahmed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 37,
@@ -697,10 +1124,21 @@
     "furnished": false,
     "building": "China Cluster",
     "image": "https://images.bayut.com/thumbs/285959216.jpg",
-    "amenities": ["车位", "超市", "近中国城"],
+    "amenities": [
+      "车位",
+      "超市",
+      "近中国城"
+    ],
     "description": "一房一厅，适合小家庭",
     "available": "2026-05-25",
-    "contact": "+971 50 123 4537"
+    "contact": "+971 50 123 4537",
+    "agentId": "sales-004",
+    "agentName": "Li Wei",
+    "agentNameZh": "李伟",
+    "agentPhone": "+971 50 444 5555",
+    "agentWhatsapp": "+971 50 444 5555",
+    "agentEmail": "liwei@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 38,
@@ -716,10 +1154,21 @@
     "furnished": true,
     "building": "France Cluster",
     "image": "https://images.bayut.com/thumbs/285959217.jpg",
-    "amenities": ["车位", "带家具", "超市"],
+    "amenities": [
+      "车位",
+      "带家具",
+      "超市"
+    ],
     "description": "带家具，法国区",
     "available": "2026-06-01",
-    "contact": "+971 50 123 4538"
+    "contact": "+971 50 123 4538",
+    "agentId": "sales-001",
+    "agentName": "Ahmed Hassan",
+    "agentNameZh": "艾哈迈德",
+    "agentPhone": "+971 50 111 2222",
+    "agentWhatsapp": "+971 50 111 2222",
+    "agentEmail": "ahmed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 39,
@@ -735,10 +1184,20 @@
     "furnished": false,
     "building": "Italy Cluster",
     "image": "https://images.bayut.com/thumbs/285959218.jpg",
-    "amenities": ["车位", "超市"],
+    "amenities": [
+      "车位",
+      "超市"
+    ],
     "description": "预算友好，意大利区",
     "available": "2026-05-28",
-    "contact": "+971 50 123 4539"
+    "contact": "+971 50 123 4539",
+    "agentId": "sales-004",
+    "agentName": "Li Wei",
+    "agentNameZh": "李伟",
+    "agentPhone": "+971 50 444 5555",
+    "agentWhatsapp": "+971 50 444 5555",
+    "agentEmail": "liwei@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 40,
@@ -754,10 +1213,21 @@
     "furnished": false,
     "building": "Spain Cluster",
     "image": "https://images.bayut.com/thumbs/285959219.jpg",
-    "amenities": ["车位", "超市", "公园"],
+    "amenities": [
+      "车位",
+      "超市",
+      "公园"
+    ],
     "description": "宽敞 studio，西班牙区",
     "available": "2026-06-05",
-    "contact": "+971 50 123 4540"
+    "contact": "+971 50 123 4540",
+    "agentId": "sales-001",
+    "agentName": "Ahmed Hassan",
+    "agentNameZh": "艾哈迈德",
+    "agentPhone": "+971 50 111 2222",
+    "agentWhatsapp": "+971 50 111 2222",
+    "agentEmail": "ahmed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 41,
@@ -773,10 +1243,21 @@
     "furnished": true,
     "building": "Greece Cluster",
     "image": "https://images.bayut.com/thumbs/285959220.jpg",
-    "amenities": ["车位", "超市", "带家具"],
+    "amenities": [
+      "车位",
+      "超市",
+      "带家具"
+    ],
     "description": "现代化装修，希腊区",
     "available": "2026-06-10",
-    "contact": "+971 50 123 4541"
+    "contact": "+971 50 123 4541",
+    "agentId": "sales-004",
+    "agentName": "Li Wei",
+    "agentNameZh": "李伟",
+    "agentPhone": "+971 50 444 5555",
+    "agentWhatsapp": "+971 50 444 5555",
+    "agentEmail": "liwei@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 42,
@@ -792,10 +1273,20 @@
     "furnished": false,
     "building": "Morocco Cluster",
     "image": "https://images.bayut.com/thumbs/285959221.jpg",
-    "amenities": ["车位", "超市"],
+    "amenities": [
+      "车位",
+      "超市"
+    ],
     "description": "超低价，摩洛哥区",
     "available": "2026-05-22",
-    "contact": "+971 50 123 4542"
+    "contact": "+971 50 123 4542",
+    "agentId": "sales-001",
+    "agentName": "Ahmed Hassan",
+    "agentNameZh": "艾哈迈德",
+    "agentPhone": "+971 50 111 2222",
+    "agentWhatsapp": "+971 50 111 2222",
+    "agentEmail": "ahmed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 43,
@@ -811,10 +1302,21 @@
     "furnished": false,
     "building": "Morocco Cluster",
     "image": "https://images.bayut.com/thumbs/285959222.jpg",
-    "amenities": ["车位", "超市", "干净"],
+    "amenities": [
+      "车位",
+      "超市",
+      "干净"
+    ],
     "description": "干净整洁，摩洛哥区",
     "available": "2026-06-08",
-    "contact": "+971 50 123 4543"
+    "contact": "+971 50 123 4543",
+    "agentId": "sales-004",
+    "agentName": "Li Wei",
+    "agentNameZh": "李伟",
+    "agentPhone": "+971 50 444 5555",
+    "agentWhatsapp": "+971 50 444 5555",
+    "agentEmail": "liwei@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 44,
@@ -830,10 +1332,21 @@
     "furnished": false,
     "building": "Dragon Mart Residence",
     "image": "https://images.bayut.com/thumbs/285959223.jpg",
-    "amenities": ["车位", "近龙城", "超市"],
+    "amenities": [
+      "车位",
+      "近龙城",
+      "超市"
+    ],
     "description": "近龙城，购物方便",
     "available": "2026-05-30",
-    "contact": "+971 50 123 4544"
+    "contact": "+971 50 123 4544",
+    "agentId": "sales-001",
+    "agentName": "Ahmed Hassan",
+    "agentNameZh": "艾哈迈德",
+    "agentPhone": "+971 50 111 2222",
+    "agentWhatsapp": "+971 50 111 2222",
+    "agentEmail": "ahmed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 45,
@@ -849,10 +1362,21 @@
     "furnished": false,
     "building": "Dragon Mart Residence",
     "image": "https://images.bayut.com/thumbs/285959224.jpg",
-    "amenities": ["车位", "近龙城", "超市"],
+    "amenities": [
+      "车位",
+      "近龙城",
+      "超市"
+    ],
     "description": "近龙城，适合在龙城工作的人",
     "available": "2026-06-12",
-    "contact": "+971 50 123 4545"
+    "contact": "+971 50 123 4545",
+    "agentId": "sales-004",
+    "agentName": "Li Wei",
+    "agentNameZh": "李伟",
+    "agentPhone": "+971 50 444 5555",
+    "agentWhatsapp": "+971 50 444 5555",
+    "agentEmail": "liwei@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 46,
@@ -868,10 +1392,21 @@
     "furnished": false,
     "building": "Persia Cluster",
     "image": "https://images.bayut.com/thumbs/285959225.jpg",
-    "amenities": ["车位", "安静", "超市"],
+    "amenities": [
+      "车位",
+      "安静",
+      "超市"
+    ],
     "description": "安静区域，波斯区",
     "available": "2026-06-15",
-    "contact": "+971 50 123 4546"
+    "contact": "+971 50 123 4546",
+    "agentId": "sales-001",
+    "agentName": "Ahmed Hassan",
+    "agentNameZh": "艾哈迈德",
+    "agentPhone": "+971 50 111 2222",
+    "agentWhatsapp": "+971 50 111 2222",
+    "agentEmail": "ahmed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 47,
@@ -887,10 +1422,21 @@
     "furnished": false,
     "building": "Persia Cluster",
     "image": "https://images.bayut.com/thumbs/285959226.jpg",
-    "amenities": ["车位", "采光好", "超市"],
+    "amenities": [
+      "车位",
+      "采光好",
+      "超市"
+    ],
     "description": "采光好，波斯区",
     "available": "2026-06-20",
-    "contact": "+971 50 123 4547"
+    "contact": "+971 50 123 4547",
+    "agentId": "sales-004",
+    "agentName": "Li Wei",
+    "agentNameZh": "李伟",
+    "agentPhone": "+971 50 444 5555",
+    "agentWhatsapp": "+971 50 444 5555",
+    "agentEmail": "liwei@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 48,
@@ -906,10 +1452,20 @@
     "furnished": false,
     "building": "England Cluster",
     "image": "https://images.bayut.com/thumbs/285959227.jpg",
-    "amenities": ["车位", "超市"],
+    "amenities": [
+      "车位",
+      "超市"
+    ],
     "description": "性价比高，英国区",
     "available": "2026-05-26",
-    "contact": "+971 50 123 4548"
+    "contact": "+971 50 123 4548",
+    "agentId": "sales-001",
+    "agentName": "Ahmed Hassan",
+    "agentNameZh": "艾哈迈德",
+    "agentPhone": "+971 50 111 2222",
+    "agentWhatsapp": "+971 50 111 2222",
+    "agentEmail": "ahmed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 49,
@@ -925,10 +1481,21 @@
     "furnished": false,
     "building": "England Cluster",
     "image": "https://images.bayut.com/thumbs/285959228.jpg",
-    "amenities": ["车位", "舒适", "超市"],
+    "amenities": [
+      "车位",
+      "舒适",
+      "超市"
+    ],
     "description": "舒适宜居，英国区",
     "available": "2026-06-18",
-    "contact": "+971 50 123 4549"
+    "contact": "+971 50 123 4549",
+    "agentId": "sales-004",
+    "agentName": "Li Wei",
+    "agentNameZh": "李伟",
+    "agentPhone": "+971 50 444 5555",
+    "agentWhatsapp": "+971 50 444 5555",
+    "agentEmail": "liwei@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 50,
@@ -944,10 +1511,21 @@
     "furnished": true,
     "building": "Russia Cluster",
     "image": "https://images.bayut.com/thumbs/285959229.jpg",
-    "amenities": ["车位", "顶层", "带家具"],
+    "amenities": [
+      "车位",
+      "顶层",
+      "带家具"
+    ],
     "description": "顶层单位，视野好",
     "available": "2026-06-25",
-    "contact": "+971 50 123 4550"
+    "contact": "+971 50 123 4550",
+    "agentId": "sales-001",
+    "agentName": "Ahmed Hassan",
+    "agentNameZh": "艾哈迈德",
+    "agentPhone": "+971 50 111 2222",
+    "agentWhatsapp": "+971 50 111 2222",
+    "agentEmail": "ahmed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 51,
@@ -963,10 +1541,22 @@
     "furnished": true,
     "building": "Fitness Tower",
     "image": "https://images.bayut.com/thumbs/285959230.jpg",
-    "amenities": ["泳池", "健身房", "车位", "桑拿"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "桑拿"
+    ],
     "description": "健身爱好者首选，设备齐全",
     "available": "2026-06-02",
-    "contact": "+971 50 123 4551"
+    "contact": "+971 50 123 4551",
+    "agentId": "sales-003",
+    "agentName": "Mohammed Ali",
+    "agentNameZh": "穆罕默德",
+    "agentPhone": "+971 50 333 4444",
+    "agentWhatsapp": "+971 50 333 4444",
+    "agentEmail": "mohammed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 52,
@@ -982,10 +1572,22 @@
     "furnished": false,
     "building": "Fitness Tower",
     "image": "https://images.bayut.com/thumbs/285959231.jpg",
-    "amenities": ["泳池", "健身房", "车位", "书房"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "书房"
+    ],
     "description": "带书房，适合居家办公",
     "available": "2026-06-15",
-    "contact": "+971 50 123 4552"
+    "contact": "+971 50 123 4552",
+    "agentId": "sales-004",
+    "agentName": "Li Wei",
+    "agentNameZh": "李伟",
+    "agentPhone": "+971 50 444 5555",
+    "agentWhatsapp": "+971 50 444 5555",
+    "agentEmail": "liwei@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 53,
@@ -1001,10 +1603,22 @@
     "furnished": true,
     "building": "Pet Paradise",
     "image": "https://images.bayut.com/thumbs/285959232.jpg",
-    "amenities": ["泳池", "健身房", "车位", "宠物友好"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "宠物友好"
+    ],
     "description": "允许养宠物，有宠物公园",
     "available": "2026-06-08",
-    "contact": "+971 50 123 4553"
+    "contact": "+971 50 123 4553",
+    "agentId": "sales-001",
+    "agentName": "Ahmed Hassan",
+    "agentNameZh": "艾哈迈德",
+    "agentPhone": "+971 50 111 2222",
+    "agentWhatsapp": "+971 50 111 2222",
+    "agentEmail": "ahmed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 54,
@@ -1020,10 +1634,22 @@
     "furnished": false,
     "building": "Pet Paradise",
     "image": "https://images.bayut.com/thumbs/285959233.jpg",
-    "amenities": ["泳池", "健身房", "车位", "宠物友好"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "宠物友好"
+    ],
     "description": "宠物友好社区",
     "available": "2026-06-22",
-    "contact": "+971 50 123 4554"
+    "contact": "+971 50 123 4554",
+    "agentId": "sales-003",
+    "agentName": "Mohammed Ali",
+    "agentNameZh": "穆罕默德",
+    "agentPhone": "+971 50 333 4444",
+    "agentWhatsapp": "+971 50 333 4444",
+    "agentEmail": "mohammed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 55,
@@ -1039,10 +1665,21 @@
     "furnished": false,
     "building": "Bachelor Homes",
     "image": "https://images.bayut.com/thumbs/285959234.jpg",
-    "amenities": ["泳池", "车位", "24 小时安保"],
+    "amenities": [
+      "泳池",
+      "车位",
+      "24 小时安保"
+    ],
     "description": "适合单身人士",
     "available": "2026-05-28",
-    "contact": "+971 50 123 4555"
+    "contact": "+971 50 123 4555",
+    "agentId": "sales-004",
+    "agentName": "Li Wei",
+    "agentNameZh": "李伟",
+    "agentPhone": "+971 50 444 5555",
+    "agentWhatsapp": "+971 50 444 5555",
+    "agentEmail": "liwei@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 56,
@@ -1058,10 +1695,22 @@
     "furnished": true,
     "building": "Executive Tower",
     "image": "https://images.bayut.com/thumbs/285959235.jpg",
-    "amenities": ["泳池", "健身房", "车位", "行政酒廊"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "行政酒廊"
+    ],
     "description": "行政公寓，高端服务",
     "available": "2026-07-01",
-    "contact": "+971 50 123 4556"
+    "contact": "+971 50 123 4556",
+    "agentId": "sales-001",
+    "agentName": "Ahmed Hassan",
+    "agentNameZh": "艾哈迈德",
+    "agentPhone": "+971 50 111 2222",
+    "agentWhatsapp": "+971 50 111 2222",
+    "agentEmail": "ahmed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 57,
@@ -1077,10 +1726,21 @@
     "furnished": false,
     "building": "Parking Plus",
     "image": "https://images.bayut.com/thumbs/285959236.jpg",
-    "amenities": ["泳池", "健身房", "2 个车位"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "2 个车位"
+    ],
     "description": "带 2 个车位，适合有车族",
     "available": "2026-06-05",
-    "contact": "+971 50 123 4557"
+    "contact": "+971 50 123 4557",
+    "agentId": "sales-003",
+    "agentName": "Mohammed Ali",
+    "agentNameZh": "穆罕默德",
+    "agentPhone": "+971 50 333 4444",
+    "agentWhatsapp": "+971 50 333 4444",
+    "agentEmail": "mohammed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 58,
@@ -1096,10 +1756,22 @@
     "furnished": false,
     "building": "Maid Suite",
     "image": "https://images.bayut.com/thumbs/285959237.jpg",
-    "amenities": ["泳池", "健身房", "车位", "保姆房"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "保姆房"
+    ],
     "description": "带保姆房，适合有小孩家庭",
     "available": "2026-06-18",
-    "contact": "+971 50 123 4558"
+    "contact": "+971 50 123 4558",
+    "agentId": "sales-005",
+    "agentName": "Fatima Al Zaabi",
+    "agentNameZh": "法蒂玛",
+    "agentPhone": "+971 50 555 6666",
+    "agentWhatsapp": "+971 50 555 6666",
+    "agentEmail": "fatima@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 59,
@@ -1115,10 +1787,22 @@
     "furnished": false,
     "building": "Balcony Homes",
     "image": "https://images.bayut.com/thumbs/285959238.jpg",
-    "amenities": ["泳池", "健身房", "车位", "大阳台"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "大阳台"
+    ],
     "description": "大阳台，适合烧烤聚会",
     "available": "2026-06-28",
-    "contact": "+971 50 123 4559"
+    "contact": "+971 50 123 4559",
+    "agentId": "sales-002",
+    "agentName": "Sarah Johnson",
+    "agentNameZh": "莎拉",
+    "agentPhone": "+971 50 222 3333",
+    "agentWhatsapp": "+971 50 222 3333",
+    "agentEmail": "sarah@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 60,
@@ -1134,10 +1818,22 @@
     "furnished": false,
     "building": "Garden Villa",
     "image": "https://images.bayut.com/thumbs/285959239.jpg",
-    "amenities": ["泳池", "健身房", "车位", "私家花园"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "私家花园"
+    ],
     "description": "带私家花园，底层单位",
     "available": "2026-07-10",
-    "contact": "+971 50 123 4560"
+    "contact": "+971 50 123 4560",
+    "agentId": "sales-003",
+    "agentName": "Mohammed Ali",
+    "agentNameZh": "穆罕默德",
+    "agentPhone": "+971 50 333 4444",
+    "agentWhatsapp": "+971 50 333 4444",
+    "agentEmail": "mohammed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 61,
@@ -1153,10 +1849,21 @@
     "furnished": true,
     "building": "All Inclusive",
     "image": "https://images.bayut.com/thumbs/285959240.jpg",
-    "amenities": ["车位", "包水电", "带家具"],
+    "amenities": [
+      "车位",
+      "包水电",
+      "带家具"
+    ],
     "description": "包水电费，省心省力",
     "available": "2026-06-01",
-    "contact": "+971 50 123 4561"
+    "contact": "+971 50 123 4561",
+    "agentId": "sales-001",
+    "agentName": "Ahmed Hassan",
+    "agentNameZh": "艾哈迈德",
+    "agentPhone": "+971 50 111 2222",
+    "agentWhatsapp": "+971 50 111 2222",
+    "agentEmail": "ahmed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 62,
@@ -1172,10 +1879,21 @@
     "furnished": false,
     "building": "Chiller Free",
     "image": "https://images.bayut.com/thumbs/285959241.jpg",
-    "amenities": ["车位", "免费空调", "超市"],
+    "amenities": [
+      "车位",
+      "免费空调",
+      "超市"
+    ],
     "description": "免费空调，夏天省钱",
     "available": "2026-06-12",
-    "contact": "+971 50 123 4562"
+    "contact": "+971 50 123 4562",
+    "agentId": "sales-004",
+    "agentName": "Li Wei",
+    "agentNameZh": "李伟",
+    "agentPhone": "+971 50 444 5555",
+    "agentWhatsapp": "+971 50 444 5555",
+    "agentEmail": "liwei@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 63,
@@ -1191,10 +1909,22 @@
     "furnished": true,
     "building": "School Zone",
     "image": "https://images.bayut.com/thumbs/285959242.jpg",
-    "amenities": ["泳池", "健身房", "车位", "近学校"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "近学校"
+    ],
     "description": "近学校，适合有孩子家庭",
     "available": "2026-06-08",
-    "contact": "+971 50 123 4563"
+    "contact": "+971 50 123 4563",
+    "agentId": "sales-001",
+    "agentName": "Ahmed Hassan",
+    "agentNameZh": "艾哈迈德",
+    "agentPhone": "+971 50 111 2222",
+    "agentWhatsapp": "+971 50 111 2222",
+    "agentEmail": "ahmed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 64,
@@ -1210,10 +1940,22 @@
     "furnished": false,
     "building": "School Zone",
     "image": "https://images.bayut.com/thumbs/285959243.jpg",
-    "amenities": ["泳池", "健身房", "车位", "近学校"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "近学校"
+    ],
     "description": "步行到学校",
     "available": "2026-06-20",
-    "contact": "+971 50 123 4564"
+    "contact": "+971 50 123 4564",
+    "agentId": "sales-003",
+    "agentName": "Mohammed Ali",
+    "agentNameZh": "穆罕默德",
+    "agentPhone": "+971 50 333 4444",
+    "agentWhatsapp": "+971 50 333 4444",
+    "agentEmail": "mohammed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 65,
@@ -1229,10 +1971,22 @@
     "furnished": true,
     "building": "Pool View",
     "image": "https://images.bayut.com/thumbs/285959244.jpg",
-    "amenities": ["泳池", "健身房", "车位", "泳池景观"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "泳池景观"
+    ],
     "description": "泳池景观，视野好",
     "available": "2026-06-15",
-    "contact": "+971 50 123 4565"
+    "contact": "+971 50 123 4565",
+    "agentId": "sales-005",
+    "agentName": "Fatima Al Zaabi",
+    "agentNameZh": "法蒂玛",
+    "agentPhone": "+971 50 555 6666",
+    "agentWhatsapp": "+971 50 555 6666",
+    "agentEmail": "fatima@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 66,
@@ -1248,10 +2002,22 @@
     "furnished": false,
     "building": "Pool View",
     "image": "https://images.bayut.com/thumbs/285959245.jpg",
-    "amenities": ["泳池", "健身房", "车位", "泳池景观"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "泳池景观"
+    ],
     "description": "俯瞰泳池，景观优美",
     "available": "2026-06-25",
-    "contact": "+971 50 123 4566"
+    "contact": "+971 50 123 4566",
+    "agentId": "sales-002",
+    "agentName": "Sarah Johnson",
+    "agentNameZh": "莎拉",
+    "agentPhone": "+971 50 222 3333",
+    "agentWhatsapp": "+971 50 222 3333",
+    "agentEmail": "sarah@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 67,
@@ -1267,10 +2033,21 @@
     "furnished": false,
     "building": "Ground Floor",
     "image": "https://images.bayut.com/thumbs/285959246.jpg",
-    "amenities": ["车位", "底层", "方便"],
+    "amenities": [
+      "车位",
+      "底层",
+      "方便"
+    ],
     "description": "底层单位，搬东西方便",
     "available": "2026-05-24",
-    "contact": "+971 50 123 4567"
+    "contact": "+971 50 123 4567",
+    "agentId": "sales-004",
+    "agentName": "Li Wei",
+    "agentNameZh": "李伟",
+    "agentPhone": "+971 50 444 5555",
+    "agentWhatsapp": "+971 50 444 5555",
+    "agentEmail": "liwei@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 68,
@@ -1286,10 +2063,21 @@
     "furnished": false,
     "building": "Ground Floor",
     "image": "https://images.bayut.com/thumbs/285959247.jpg",
-    "amenities": ["车位", "底层", "小院子"],
+    "amenities": [
+      "车位",
+      "底层",
+      "小院子"
+    ],
     "description": "带小院子，底层",
     "available": "2026-06-02",
-    "contact": "+971 50 123 4568"
+    "contact": "+971 50 123 4568",
+    "agentId": "sales-001",
+    "agentName": "Ahmed Hassan",
+    "agentNameZh": "艾哈迈德",
+    "agentPhone": "+971 50 111 2222",
+    "agentWhatsapp": "+971 50 111 2222",
+    "agentEmail": "ahmed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 69,
@@ -1305,10 +2093,22 @@
     "furnished": true,
     "building": "High Rise",
     "image": "https://images.bayut.com/thumbs/285959248.jpg",
-    "amenities": ["泳池", "健身房", "车位", "高层"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "高层"
+    ],
     "description": "高楼层，视野无遮挡",
     "available": "2026-06-18",
-    "contact": "+971 50 123 4569"
+    "contact": "+971 50 123 4569",
+    "agentId": "sales-003",
+    "agentName": "Mohammed Ali",
+    "agentNameZh": "穆罕默德",
+    "agentPhone": "+971 50 333 4444",
+    "agentWhatsapp": "+971 50 333 4444",
+    "agentEmail": "mohammed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 70,
@@ -1324,10 +2124,22 @@
     "furnished": false,
     "building": "High Rise",
     "image": "https://images.bayut.com/thumbs/285959249.jpg",
-    "amenities": ["泳池", "健身房", "车位", "高层景观"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "高层景观"
+    ],
     "description": "高层，景观好",
     "available": "2026-07-02",
-    "contact": "+971 50 123 4570"
+    "contact": "+971 50 123 4570",
+    "agentId": "sales-004",
+    "agentName": "Li Wei",
+    "agentNameZh": "李伟",
+    "agentPhone": "+971 50 444 5555",
+    "agentWhatsapp": "+971 50 444 5555",
+    "agentEmail": "liwei@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 71,
@@ -1343,10 +2155,22 @@
     "furnished": false,
     "building": "Duplex Tower",
     "image": "https://images.bayut.com/thumbs/285959250.jpg",
-    "amenities": ["泳池", "健身房", "车位", "复式"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "复式"
+    ],
     "description": "复式户型，上下两层",
     "available": "2026-07-15",
-    "contact": "+971 50 123 4571"
+    "contact": "+971 50 123 4571",
+    "agentId": "sales-002",
+    "agentName": "Sarah Johnson",
+    "agentNameZh": "莎拉",
+    "agentPhone": "+971 50 222 3333",
+    "agentWhatsapp": "+971 50 222 3333",
+    "agentEmail": "sarah@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 72,
@@ -1362,10 +2186,23 @@
     "furnished": false,
     "building": "Family Homes",
     "image": "https://images.bayut.com/thumbs/285959251.jpg",
-    "amenities": ["泳池", "健身房", "车位", "儿童乐园", "近学校"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "儿童乐园",
+      "近学校"
+    ],
     "description": "大三房，适合大家庭",
     "available": "2026-07-20",
-    "contact": "+971 50 123 4572"
+    "contact": "+971 50 123 4572",
+    "agentId": "sales-003",
+    "agentName": "Mohammed Ali",
+    "agentNameZh": "穆罕默德",
+    "agentPhone": "+971 50 333 4444",
+    "agentWhatsapp": "+971 50 333 4444",
+    "agentEmail": "mohammed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 73,
@@ -1381,10 +2218,22 @@
     "furnished": false,
     "building": "Two Bedroom Tower",
     "image": "https://images.bayut.com/thumbs/285959252.jpg",
-    "amenities": ["泳池", "健身房", "车位", "儿童乐园"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "儿童乐园"
+    ],
     "description": "大两房，性价比高",
     "available": "2026-06-28",
-    "contact": "+971 50 123 4573"
+    "contact": "+971 50 123 4573",
+    "agentId": "sales-004",
+    "agentName": "Li Wei",
+    "agentNameZh": "李伟",
+    "agentPhone": "+971 50 444 5555",
+    "agentWhatsapp": "+971 50 444 5555",
+    "agentEmail": "liwei@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 74,
@@ -1400,10 +2249,23 @@
     "furnished": true,
     "building": "Penthouse Tower",
     "image": "https://images.bayut.com/thumbs/285959253.jpg",
-    "amenities": ["泳池", "健身房", "车位", "露台", "豪华装修"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "露台",
+      "豪华装修"
+    ],
     "description": "顶层复式，豪华装修",
     "available": "2026-08-01",
-    "contact": "+971 50 123 4574"
+    "contact": "+971 50 123 4574",
+    "agentId": "sales-001",
+    "agentName": "Ahmed Hassan",
+    "agentNameZh": "艾哈迈德",
+    "agentPhone": "+971 50 111 2222",
+    "agentWhatsapp": "+971 50 111 2222",
+    "agentEmail": "ahmed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 75,
@@ -1419,10 +2281,21 @@
     "furnished": false,
     "building": "Budget Homes",
     "image": "https://images.bayut.com/thumbs/285959254.jpg",
-    "amenities": ["车位", "超市", "便宜"],
+    "amenities": [
+      "车位",
+      "超市",
+      "便宜"
+    ],
     "description": "便宜大两房",
     "available": "2026-06-15",
-    "contact": "+971 50 123 4575"
+    "contact": "+971 50 123 4575",
+    "agentId": "sales-004",
+    "agentName": "Li Wei",
+    "agentNameZh": "李伟",
+    "agentPhone": "+971 50 444 5555",
+    "agentWhatsapp": "+971 50 444 5555",
+    "agentEmail": "liwei@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 76,
@@ -1438,10 +2311,22 @@
     "furnished": true,
     "building": "Ladies Only",
     "image": "https://images.bayut.com/thumbs/285959255.jpg",
-    "amenities": ["泳池", "健身房", "车位", "女士专用"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "女士专用"
+    ],
     "description": "女士专用公寓",
     "available": "2026-06-05",
-    "contact": "+971 50 123 4576"
+    "contact": "+971 50 123 4576",
+    "agentId": "sales-001",
+    "agentName": "Ahmed Hassan",
+    "agentNameZh": "艾哈迈德",
+    "agentPhone": "+971 50 111 2222",
+    "agentWhatsapp": "+971 50 111 2222",
+    "agentEmail": "ahmed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 77,
@@ -1457,10 +2342,22 @@
     "furnished": true,
     "building": "Short Stay",
     "image": "https://images.bayut.com/thumbs/285959256.jpg",
-    "amenities": ["泳池", "健身房", "车位", "短租"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "短租"
+    ],
     "description": "可短租，按月付费",
     "available": "2026-05-25",
-    "contact": "+971 50 123 4577"
+    "contact": "+971 50 123 4577",
+    "agentId": "sales-003",
+    "agentName": "Mohammed Ali",
+    "agentNameZh": "穆罕默德",
+    "agentPhone": "+971 50 333 4444",
+    "agentWhatsapp": "+971 50 333 4444",
+    "agentEmail": "mohammed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 78,
@@ -1476,10 +2373,22 @@
     "furnished": true,
     "building": "Short Stay",
     "image": "https://images.bayut.com/thumbs/285959257.jpg",
-    "amenities": ["泳池", "健身房", "车位", "短租"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "短租"
+    ],
     "description": "可短租，灵活租期",
     "available": "2026-05-28",
-    "contact": "+971 50 123 4578"
+    "contact": "+971 50 123 4578",
+    "agentId": "sales-005",
+    "agentName": "Fatima Al Zaabi",
+    "agentNameZh": "法蒂玛",
+    "agentPhone": "+971 50 555 6666",
+    "agentWhatsapp": "+971 50 555 6666",
+    "agentEmail": "fatima@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 79,
@@ -1495,10 +2404,22 @@
     "furnished": true,
     "building": "Professional Homes",
     "image": "https://images.bayut.com/thumbs/285959258.jpg",
-    "amenities": ["泳池", "健身房", "车位", "商务中心"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "商务中心"
+    ],
     "description": "适合专业人士，近科技园",
     "available": "2026-06-12",
-    "contact": "+971 50 123 4579"
+    "contact": "+971 50 123 4579",
+    "agentId": "sales-001",
+    "agentName": "Ahmed Hassan",
+    "agentNameZh": "艾哈迈德",
+    "agentPhone": "+971 50 111 2222",
+    "agentWhatsapp": "+971 50 111 2222",
+    "agentEmail": "ahmed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 80,
@@ -1514,10 +2435,23 @@
     "furnished": false,
     "building": "Family First",
     "image": "https://images.bayut.com/thumbs/285959259.jpg",
-    "amenities": ["泳池", "健身房", "车位", "儿童乐园", "近学校"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "儿童乐园",
+      "近学校"
+    ],
     "description": "专为家庭设计",
     "available": "2026-07-01",
-    "contact": "+971 50 123 4580"
+    "contact": "+971 50 123 4580",
+    "agentId": "sales-003",
+    "agentName": "Mohammed Ali",
+    "agentNameZh": "穆罕默德",
+    "agentPhone": "+971 50 333 4444",
+    "agentWhatsapp": "+971 50 333 4444",
+    "agentEmail": "mohammed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 81,
@@ -1533,10 +2467,21 @@
     "furnished": false,
     "building": "Budget Living",
     "image": "https://images.bayut.com/thumbs/285959260.jpg",
-    "amenities": ["泳池", "车位", "经济"],
+    "amenities": [
+      "泳池",
+      "车位",
+      "经济"
+    ],
     "description": "预算友好，基本设施",
     "available": "2026-05-26",
-    "contact": "+971 50 123 4581"
+    "contact": "+971 50 123 4581",
+    "agentId": "sales-004",
+    "agentName": "Li Wei",
+    "agentNameZh": "李伟",
+    "agentPhone": "+971 50 444 5555",
+    "agentWhatsapp": "+971 50 444 5555",
+    "agentEmail": "liwei@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 82,
@@ -1552,10 +2497,21 @@
     "furnished": true,
     "building": "Fully Furnished",
     "image": "https://images.bayut.com/thumbs/285959261.jpg",
-    "amenities": ["车位", "全套家具", "拎包入住"],
+    "amenities": [
+      "车位",
+      "全套家具",
+      "拎包入住"
+    ],
     "description": "全套家具，拎包入住",
     "available": "2026-06-08",
-    "contact": "+971 50 123 4582"
+    "contact": "+971 50 123 4582",
+    "agentId": "sales-001",
+    "agentName": "Ahmed Hassan",
+    "agentNameZh": "艾哈迈德",
+    "agentPhone": "+971 50 111 2222",
+    "agentWhatsapp": "+971 50 111 2222",
+    "agentEmail": "ahmed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 83,
@@ -1571,10 +2527,22 @@
     "furnished": true,
     "building": "Semi Furnished",
     "image": "https://images.bayut.com/thumbs/285959262.jpg",
-    "amenities": ["泳池", "健身房", "车位", "部分家具"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "部分家具"
+    ],
     "description": "部分家具，价格适中",
     "available": "2026-06-18",
-    "contact": "+971 50 123 4583"
+    "contact": "+971 50 123 4583",
+    "agentId": "sales-003",
+    "agentName": "Mohammed Ali",
+    "agentNameZh": "穆罕默德",
+    "agentPhone": "+971 50 333 4444",
+    "agentWhatsapp": "+971 50 333 4444",
+    "agentEmail": "mohammed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 84,
@@ -1590,10 +2558,21 @@
     "furnished": false,
     "building": "Unfurnished Homes",
     "image": "https://images.bayut.com/thumbs/285959263.jpg",
-    "amenities": ["泳池", "健身房", "车位"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位"
+    ],
     "description": "空房，可自己配置家具",
     "available": "2026-06-22",
-    "contact": "+971 50 123 4584"
+    "contact": "+971 50 123 4584",
+    "agentId": "sales-004",
+    "agentName": "Li Wei",
+    "agentNameZh": "李伟",
+    "agentPhone": "+971 50 444 5555",
+    "agentWhatsapp": "+971 50 444 5555",
+    "agentEmail": "liwei@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 85,
@@ -1609,10 +2588,22 @@
     "furnished": false,
     "building": "Upgraded Units",
     "image": "https://images.bayut.com/thumbs/285959264.jpg",
-    "amenities": ["泳池", "健身房", "车位", "升级装修"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "升级装修"
+    ],
     "description": "升级装修，品质更好",
     "available": "2026-07-05",
-    "contact": "+971 50 123 4585"
+    "contact": "+971 50 123 4585",
+    "agentId": "sales-002",
+    "agentName": "Sarah Johnson",
+    "agentNameZh": "莎拉",
+    "agentPhone": "+971 50 222 3333",
+    "agentWhatsapp": "+971 50 222 3333",
+    "agentEmail": "sarah@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 86,
@@ -1628,10 +2619,21 @@
     "furnished": false,
     "building": "Transport Hub",
     "image": "https://images.bayut.com/thumbs/285959265.jpg",
-    "amenities": ["车位", "近公交站", "超市"],
+    "amenities": [
+      "车位",
+      "近公交站",
+      "超市"
+    ],
     "description": "近公交站，交通便利",
     "available": "2026-06-15",
-    "contact": "+971 50 123 4586"
+    "contact": "+971 50 123 4586",
+    "agentId": "sales-004",
+    "agentName": "Li Wei",
+    "agentNameZh": "李伟",
+    "agentPhone": "+971 50 444 5555",
+    "agentWhatsapp": "+971 50 444 5555",
+    "agentEmail": "liwei@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 87,
@@ -1647,10 +2649,21 @@
     "furnished": true,
     "building": "Shopping Center",
     "image": "https://images.bayut.com/thumbs/285959266.jpg",
-    "amenities": ["泳池", "车位", "近超市"],
+    "amenities": [
+      "泳池",
+      "车位",
+      "近超市"
+    ],
     "description": "楼下就是超市",
     "available": "2026-06-05",
-    "contact": "+971 50 123 4587"
+    "contact": "+971 50 123 4587",
+    "agentId": "sales-001",
+    "agentName": "Ahmed Hassan",
+    "agentNameZh": "艾哈迈德",
+    "agentPhone": "+971 50 111 2222",
+    "agentWhatsapp": "+971 50 111 2222",
+    "agentEmail": "ahmed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 88,
@@ -1666,10 +2679,22 @@
     "furnished": false,
     "building": "Metro Link",
     "image": "https://images.bayut.com/thumbs/285959267.jpg",
-    "amenities": ["泳池", "健身房", "车位", "近地铁"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "近地铁"
+    ],
     "description": "近地铁站，通勤方便",
     "available": "2026-06-25",
-    "contact": "+971 50 123 4588"
+    "contact": "+971 50 123 4588",
+    "agentId": "sales-003",
+    "agentName": "Mohammed Ali",
+    "agentNameZh": "穆罕默德",
+    "agentPhone": "+971 50 333 4444",
+    "agentWhatsapp": "+971 50 333 4444",
+    "agentEmail": "mohammed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 89,
@@ -1685,10 +2710,22 @@
     "furnished": false,
     "building": "Storage Plus",
     "image": "https://images.bayut.com/thumbs/285959268.jpg",
-    "amenities": ["泳池", "健身房", "车位", "储物间"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "储物间"
+    ],
     "description": "带储物间，收纳方便",
     "available": "2026-07-08",
-    "contact": "+971 50 123 4589"
+    "contact": "+971 50 123 4589",
+    "agentId": "sales-004",
+    "agentName": "Li Wei",
+    "agentNameZh": "李伟",
+    "agentPhone": "+971 50 444 5555",
+    "agentWhatsapp": "+971 50 444 5555",
+    "agentEmail": "liwei@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 90,
@@ -1704,10 +2741,22 @@
     "furnished": true,
     "building": "Laundry Care",
     "image": "https://images.bayut.com/thumbs/285959269.jpg",
-    "amenities": ["泳池", "健身房", "车位", "洗衣机"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "洗衣机"
+    ],
     "description": "带洗衣机，方便",
     "available": "2026-06-12",
-    "contact": "+971 50 123 4590"
+    "contact": "+971 50 123 4590",
+    "agentId": "sales-002",
+    "agentName": "Sarah Johnson",
+    "agentNameZh": "莎拉",
+    "agentPhone": "+971 50 222 3333",
+    "agentWhatsapp": "+971 50 222 3333",
+    "agentEmail": "sarah@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 91,
@@ -1723,10 +2772,21 @@
     "furnished": false,
     "building": "Spacious Living",
     "image": "https://images.bayut.com/thumbs/285959270.jpg",
-    "amenities": ["车位", "超市", "宽敞"],
+    "amenities": [
+      "车位",
+      "超市",
+      "宽敞"
+    ],
     "description": "宽敞大两房",
     "available": "2026-06-20",
-    "contact": "+971 50 123 4591"
+    "contact": "+971 50 123 4591",
+    "agentId": "sales-004",
+    "agentName": "Li Wei",
+    "agentNameZh": "李伟",
+    "agentPhone": "+971 50 444 5555",
+    "agentWhatsapp": "+971 50 444 5555",
+    "agentEmail": "liwei@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 92,
@@ -1742,10 +2802,22 @@
     "furnished": false,
     "building": "Balcony View",
     "image": "https://images.bayut.com/thumbs/285959271.jpg",
-    "amenities": ["泳池", "健身房", "车位", "阳台"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "阳台"
+    ],
     "description": "带阳台，可晾晒",
     "available": "2026-06-28",
-    "contact": "+971 50 123 4592"
+    "contact": "+971 50 123 4592",
+    "agentId": "sales-001",
+    "agentName": "Ahmed Hassan",
+    "agentNameZh": "艾哈迈德",
+    "agentPhone": "+971 50 111 2222",
+    "agentWhatsapp": "+971 50 111 2222",
+    "agentEmail": "ahmed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 93,
@@ -1761,10 +2833,22 @@
     "furnished": false,
     "building": "Gym Tower",
     "image": "https://images.bayut.com/thumbs/285959272.jpg",
-    "amenities": ["泳池", "健身房", "车位", "高端健身设备"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "高端健身设备"
+    ],
     "description": "健身房设备高端",
     "available": "2026-07-02",
-    "contact": "+971 50 123 4593"
+    "contact": "+971 50 123 4593",
+    "agentId": "sales-003",
+    "agentName": "Mohammed Ali",
+    "agentNameZh": "穆罕默德",
+    "agentPhone": "+971 50 333 4444",
+    "agentWhatsapp": "+971 50 333 4444",
+    "agentEmail": "mohammed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 94,
@@ -1780,10 +2864,22 @@
     "furnished": true,
     "building": "Connected Living",
     "image": "https://images.bayut.com/thumbs/285959273.jpg",
-    "amenities": ["泳池", "健身房", "车位", "免费 WiFi"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "免费 WiFi"
+    ],
     "description": "包免费 WiFi",
     "available": "2026-06-15",
-    "contact": "+971 50 123 4594"
+    "contact": "+971 50 123 4594",
+    "agentId": "sales-004",
+    "agentName": "Li Wei",
+    "agentNameZh": "李伟",
+    "agentPhone": "+971 50 444 5555",
+    "agentWhatsapp": "+971 50 444 5555",
+    "agentEmail": "liwei@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 95,
@@ -1799,10 +2895,22 @@
     "furnished": false,
     "building": "Corner Suites",
     "image": "https://images.bayut.com/thumbs/285959274.jpg",
-    "amenities": ["泳池", "健身房", "车位", "双面采光"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "双面采光"
+    ],
     "description": " corner 单位，采光好",
     "available": "2026-07-12",
-    "contact": "+971 50 123 4595"
+    "contact": "+971 50 123 4595",
+    "agentId": "sales-002",
+    "agentName": "Sarah Johnson",
+    "agentNameZh": "莎拉",
+    "agentPhone": "+971 50 222 3333",
+    "agentWhatsapp": "+971 50 222 3333",
+    "agentEmail": "sarah@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 96,
@@ -1818,10 +2926,21 @@
     "furnished": false,
     "building": "Clean Homes",
     "image": "https://images.bayut.com/thumbs/285959275.jpg",
-    "amenities": ["车位", "干净", "整洁"],
+    "amenities": [
+      "车位",
+      "干净",
+      "整洁"
+    ],
     "description": "干净整洁，维护好",
     "available": "2026-06-02",
-    "contact": "+971 50 123 4596"
+    "contact": "+971 50 123 4596",
+    "agentId": "sales-004",
+    "agentName": "Li Wei",
+    "agentNameZh": "李伟",
+    "agentPhone": "+971 50 444 5555",
+    "agentWhatsapp": "+971 50 444 5555",
+    "agentEmail": "liwei@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 97,
@@ -1837,10 +2956,22 @@
     "furnished": false,
     "building": "Ready Homes",
     "image": "https://images.bayut.com/thumbs/285959276.jpg",
-    "amenities": ["泳池", "健身房", "车位", "即刻入住"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "即刻入住"
+    ],
     "description": "即刻入住，随时看房",
     "available": "2026-05-22",
-    "contact": "+971 50 123 4597"
+    "contact": "+971 50 123 4597",
+    "agentId": "sales-001",
+    "agentName": "Ahmed Hassan",
+    "agentNameZh": "艾哈迈德",
+    "agentPhone": "+971 50 111 2222",
+    "agentWhatsapp": "+971 50 111 2222",
+    "agentEmail": "ahmed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 98,
@@ -1856,10 +2987,22 @@
     "furnished": false,
     "building": "Prime Tower",
     "image": "https://images.bayut.com/thumbs/285959277.jpg",
-    "amenities": ["泳池", "健身房", "车位", "核心位置"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "核心位置"
+    ],
     "description": "JVC 核心位置",
     "available": "2026-06-30",
-    "contact": "+971 50 123 4598"
+    "contact": "+971 50 123 4598",
+    "agentId": "sales-003",
+    "agentName": "Mohammed Ali",
+    "agentNameZh": "穆罕默德",
+    "agentPhone": "+971 50 333 4444",
+    "agentWhatsapp": "+971 50 333 4444",
+    "agentEmail": "mohammed@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 99,
@@ -1875,10 +3018,22 @@
     "furnished": false,
     "building": "Value Homes",
     "image": "https://images.bayut.com/thumbs/285959278.jpg",
-    "amenities": ["泳池", "健身房", "车位", "性价比高"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "性价比高"
+    ],
     "description": "DSO 性价比最高两房",
     "available": "2026-07-05",
-    "contact": "+971 50 123 4599"
+    "contact": "+971 50 123 4599",
+    "agentId": "sales-004",
+    "agentName": "Li Wei",
+    "agentNameZh": "李伟",
+    "agentPhone": "+971 50 444 5555",
+    "agentWhatsapp": "+971 50 444 5555",
+    "agentEmail": "liwei@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   },
   {
     "id": 100,
@@ -1894,9 +3049,22 @@
     "furnished": false,
     "building": "Premium Tower",
     "image": "https://images.bayut.com/thumbs/285959279.jpg",
-    "amenities": ["泳池", "健身房", "车位", "高端装修", "智能家居"],
+    "amenities": [
+      "泳池",
+      "健身房",
+      "车位",
+      "高端装修",
+      "智能家居"
+    ],
     "description": "高端装修，智能家居系统",
     "available": "2026-07-18",
-    "contact": "+971 50 123 4600"
+    "contact": "+971 50 123 4600",
+    "agentId": "sales-002",
+    "agentName": "Sarah Johnson",
+    "agentNameZh": "莎拉",
+    "agentPhone": "+971 50 222 3333",
+    "agentWhatsapp": "+971 50 222 3333",
+    "agentEmail": "sarah@dealzy.ae",
+    "assignedAt": "2026-05-21T08:21:39.715Z"
   }
 ]

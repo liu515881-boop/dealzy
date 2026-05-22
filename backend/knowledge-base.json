@@ -1,6 +1,6 @@
 {
-  "version": "1.0",
-  "updatedAt": "2026-05-19",
+  "version": "2.0",
+  "updatedAt": "2026-05-21",
   "categories": {
     "rent_basics": {
       "name": "租房基础",
@@ -65,6 +65,99 @@
           "a": "迪拜买房流程：\n1. 选房：确定意向房源\n2. 签 MOU：买卖协议（付 10% 定金）\n3. 贷款（如需要）：银行审批\n4. 过户：迪拜土地局办理\n5. 付款：付尾款 + 过户费（4% DLD 费）\n6. 拿钥匙：收房\n\n全程约 2-6 周（全款更快）。"
         }
       ]
+    },
+    "payment": {
+      "name": "付款方式",
+      "questions": [
+        {
+          "q": "租金可以分期付吗？",
+          "a": "可以！迪拜租金支付方式灵活：\n• 年付（1 张支票）：最优惠，房东最喜欢\n• 半年付（2 张支票）：常见\n• 季付（4 张支票）：较常见\n• 月付（12 张支票）：较少见，通常需加价 5-10%\n\n支票数量越多，租金可能越高。我们可以帮您协商！"
+        },
+        {
+          "q": "接受信用卡付款吗？",
+          "a": "大部分房东只接受支票（Post-dated Cheques）。少数接受银行转账或信用卡，但可能有 2-3% 手续费。如果您没有支票本，我们可以帮您协调替代方案。"
+        },
+        {
+          "q": "买房可以贷款吗？",
+          "a": "可以！迪拜房产贷款政策：\n• 外国人：最高贷 50-60%\n• 迪拜居民：最高贷 75-80%\n• 利率：约 3-5%（浮动）\n• 期限：最长 25 年\n\n需要材料：护照、签证、工资单、银行流水（6 个月）。我们可以推荐合作银行！"
+        }
+      ]
+    },
+    "utilities": {
+      "name": "水电物业",
+      "questions": [
+        {
+          "q": "DEWA 是什么？怎么开户？",
+          "a": "DEWA = Dubai Electricity & Water Authority（迪拜水电局）。\n\n开户方式：\n• 线上：dewa.gov.ae 或 DEWA App\n• 线下：DEWA 服务中心\n\n所需材料：\n• 护照 + 签证复印件\n• 租房合同（Ejari）\n• 押金：公寓 2000AED，别墅 4000AED\n\n开户费：约 1000-2000AED（含押金 + 首月费用）"
+        },
+        {
+          "q": "物业费（Service Charge）多少？",
+          "a": "迪拜物业费因楼盘而异：\n• 普通公寓：10-18 AED/sqft/年\n• 高端公寓：20-35 AED/sqft/年\n• 别墅：8-15 AED/sqft/年\n\n举例：1000 sqft 公寓，物业费约 1.2-2 万 AED/年\n\n物业费通常由房东承担，但需确认合同。"
+        },
+        {
+          "q": "网络怎么办理？",
+          "a": "迪拜主要网络供应商：\n• Du：du.ae\n• Etisalat：etisalat.ae\n\n家庭宽带套餐：\n• 100Mbps: 300-400 AED/月\n• 500Mbps: 500-700 AED/月\n• 1Gbps: 800-1000 AED/月\n\n需要材料：护照、签证、租房合同。安装约 3-5 天。"
+        }
+      ]
+    },
+    "schools": {
+      "name": "学区教育",
+      "questions": [
+        {
+          "q": "DSO 附近有哪些学校？",
+          "a": "DSO 及周边学校：\n• Dubai British School（英式，口碑好）\n• GEMS Wellington（英式，高端）\n• Dubai Academy（IB 课程，顶级）\n• Jumeirah English Speaking School（JESS，顶级）\n\n学费参考：\n• 幼儿园：2-4 万 AED/年\n• 小学：4-7 万 AED/年\n• 中学：7-12 万 AED/年\n\n我们可以帮您安排学校参观！"
+        },
+        {
+          "q": "JVC 附近有哪些学校？",
+          "a": "JVC 及周边学校：\n• Jumeirah English Speaking School（JESS）\n• Dove Green Private School\n• GEMS Metropole\n• Kings' School Dubai\n\nJVC 位置好，到各大学校约 15-25 分钟车程。"
+        }
+      ]
+    },
+    "investment": {
+      "name": "投资回报",
+      "questions": [
+        {
+          "q": "迪拜房产投资回报率多少？",
+          "a": "迪拜房产投资回报率（ROI）：\n• 租金回报率：5-8%/年\n• 资本增值：3-5%/年（波动）\n• 综合回报：8-12%/年\n\n高回报区域：\n• DSO：6-7%（租金稳定）\n• JVC：6-8%（增值潜力）\n• Dubai Marina：5-6%（高端）\n• International City：7-9%（预算友好）\n\n迪拜无房产税、无所得税，投资吸引力强！"
+        },
+        {
+          "q": "外国人买房有什么限制？",
+          "a": "外国人可在 Freehold 区域永久持有房产：\n✅ Freehold 区域：Dubai Marina, Downtown, JLT, Palm Jumeirah, JVC, DSO（部分）\n❌ 非 Freehold 区域：只能租赁（最长 99 年）\n\n买房福利：\n• 75 万 AED 以上：2 年签证\n• 200 万 AED 以上：2 年签证（更宽松）\n• 可担保配偶和孩子"
+        }
+      ]
+    }
+  },
+  "quickReplies": {
+    "greeting": [
+      "Hi! 我是 Dealzy AI 客服，专注于迪拜房产咨询。😊 有什么可以帮您？",
+      "Hello! 欢迎咨询 Dealzy 房产。我是 AI 助手，帮您找房子、解答问题。🏠",
+      "您好！Dealzy 房产顾问为您服务。租房？买房？投资？我都可以帮您！"
+    ],
+    "unknown": "这个问题我需要确认一下细节。为了给您准确答复，我帮您转接人工客服，稍等片刻！\n\n或者您可以告诉我更多细节，我尽力帮您解答！",
+    "handoff": "好的，这个问题需要人工协助。我们的房产顾问会在 10 分钟内联系您（WhatsApp/电话）。请保持手机畅通！📱",
+    "viewing": "好的！我帮您安排看房。📅\n\n请告诉我：\n1. 您想看哪套房子？\n2. 什么时间方便？\n3. 您的联系电话？\n\n我们的顾问会立刻联系您确认！",
+    "contact": "📞 联系我们：\n\n• WhatsApp: +971 50 XXX XXXX\n• 电话：+971 4 XXX XXXX\n• 邮箱：info@dealzy.ae\n• 地址：Office XXX, DSO, Dubai\n\n工作时间：周一至周六 9:00-18:00"
+  },
+  "intents": {
+    "rent": {
+      "keywords": ["rent", "租房", "出租", "lease", "tenant"],
+      "response": " 迪拜目前有 {count} 套房源在租。\n\n您想找哪个区域？\n• DSO（迪拜硅谷）- 性价比高\n• JVC（朱美拉村庄）- 绿化好\n• International City - 预算友好\n\n预算多少？什么户型？"
+    },
+    "buy": {
+      "keywords": ["buy", "买房", "出售", "purchase", "investment"],
+      "response": " 迪拜目前有 {count} 套房源在售。\n\n您是投资还是自住？\n• 投资：推荐 DSO/JVC（回报率高）\n• 自住：推荐 JVC/Marina（生活便利）\n\n预算多少？"
+    },
+    "price": {
+      "keywords": ["price", "价格", "多少钱", "cost", "rent"],
+      "response": "📊 迪拜当前租金参考：\n\n• DSO Studio: 4.5-6 万 AED/年\n• DSO 1BHK: 6-8 万 AED/年\n• JVC 1BHK: 7-9 万 AED/年\n• JVC 2BHK: 10-14 万 AED/年\n• IC Studio: 3-4 万 AED/年\n\n具体价格看房源位置、装修、楼层。您想了解哪个区域？"
+    },
+    "viewing": {
+      "keywords": ["view", "看房", "visit", "see", "tour"],
+      "response": "viewing"
+    },
+    "contact": {
+      "keywords": ["contact", "联系", "电话", "whatsapp", "email"],
+      "response": "contact"
     }
   },
   "fallback": {

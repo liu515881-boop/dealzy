@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-05-21T08:22:14.700Z",
+  "duration": 219806,
+  "stats": {
+    "areas": {
+      "dubai-silicon-oasis": 0,
+      "jumeirah-village-circle-jvc": 0,
+      "international-city": 0
+    },
+    "types": {
+      "for-rent": 0,
+      "for-sale": 0
+    },
+    "totalPages": 60,
+    "totalProperties": 0,
+    "errors": 0
+  },
+  "newCount": 0,
+  "totalCount": 0
+}

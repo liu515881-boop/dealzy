@@ -44,6 +44,18 @@ try {
 // 模拟成交数据
 let deals = [];
 
+// 加载销售团队数据
+let salesTeam = [];
+try {
+  const salesPath = path.join(__dirname, '../data/sales-team.json');
+  if (fs.existsSync(salesPath)) {
+    salesTeam = JSON.parse(fs.readFileSync(salesPath, 'utf-8')).team;
+    console.log(`✅ 加载 ${salesTeam.length} 名销售顾问`);
+  }
+} catch (e) {
+  console.log('⚠️ 销售团队数据未找到');
+}
+
 /**
  * AI 智能回复
  */
@@ -164,13 +176,252 @@ app.patch('/api/admin/deals/:id/status', (req, res) => {
 });
 
 /**
+ * 获取销售团队列表
+ */
+app.get('/api/sales-team', (req, res) => {
+  res.json({
+    success: true,
+    count: salesTeam.length,
+    data: salesTeam
+  });
+});
+
+/**
+ * 获取单个销售详情
+ */
+app.get('/api/sales-team/:id', (req, res) => {
+  const sales = salesTeam.find(s => s.id === req.params.id);
+  
+  if (!sales) {
+    return res.status(404).json({ error: '销售顾问不存在' });
+  }
+  
+  // 统计该销售的房源数
+  const propertyCount = properties.filter(p => p.agentId === sales.id).length;
+  const dealCount = deals.filter(d => d.agentId === sales.id).length;
+  
+  res.json({
+    success: true,
+    data: {
+      ...sales,
+      propertyCount,
+      dealCount
+    }
+  });
+});
+
+/**
+ * 销售后台 - 获取销售统计
+ */
+app.get('/api/admin/stats', (req, res) => {
+  const stats = {
+    totalProperties: properties.length,
+    totalDeals: deals.length,
+    totalSales: salesTeam.length,
+    propertiesByArea: {},
+    propertiesByType: {},
+    dealsByStatus: {},
+    topSales: []
+  };
+  
+  // 按区域统计
+  for (const p of properties) {
+    stats.propertiesByArea[p.area] = (stats.propertiesByArea[p.area] || 0) + 1;
+    stats.propertiesByType[p.type] = (stats.propertiesByType[p.type] || 0) + 1;
+  }
+  
+  // 按状态统计成交
+  for (const d of deals) {
+    stats.dealsByStatus[d.status] = (stats.dealsByStatus[d.status] || 0) + 1;
+  }
+  
+  // 销售排名
+  const salesStats = {};
+  for (const p of properties) {
+    if (p.agentId) {
+      salesStats[p.agentId] = (salesStats[p.agentId] || 0) + 1;
+    }
+  }
+  
+  stats.topSales = Object.entries(salesStats)
+    .map(([agentId, count]) => {
+      const sales = salesTeam.find(s => s.id === agentId);
+      return {
+        id: agentId,
+        name: sales ? sales.name : agentId,
+        propertyCount: count
+      };
+    })
+    .sort((a, b) => b.propertyCount - a.propertyCount)
+    .slice(0, 5);
+  
+  res.json({
+    success: true,
+    data: stats
+  });
+});
+
+/**
+ * 销售后台 - 标记房源已租/已售
+ */
+app.patch('/api/admin/properties/:id/status', (req, res) => {
+  const { id } = req.params;
+  const { status, dealAmount, customerName, customerPhone, notes } = req.body;
+  
+  const property = properties.find(p => p.id === parseInt(id));
+  if (!property) {
+    return res.status(404).json({ error: '房源不存在' });
+  }
+  
+  property.status = status; // 'available', 'rented', 'sold'
+  property.updatedAt = new Date().toISOString();
+  
+  // 创建成交记录
+  if (status === 'rented' || status === 'sold') {
+    const deal = {
+      id: deals.length + 1,
+      propertyId: property.id,
+      propertyTitle: property.title,
+      agentId: property.agentId,
+      agentName: property.agentName,
+      customerName,
+      customerPhone,
+      dealAmount,
+      type: status === 'rented' ? 'rent' : 'sale',
+      status: 'completed',
+      createdAt: new Date().toISOString(),
+      notes
+    };
+    
+    deals.push(deal);
+    
+    // TODO: 触发通知（短信/邮件/WhatsApp）
+    console.log(` 新成交！${customerName} - ${property.title} - ${dealAmount} AED`);
+    console.log(`   销售顾问：${property.agentName}`);
+    console.log(`   客户电话：${customerPhone}`);
+  }
+  
+  res.json({
+    success: true,
+    message: '房源状态已更新',
+    data: property
+  });
+});
+
+/**
+ * 销售后台 - 获取成交列表
+ */
+app.get('/api/admin/deals', (req, res) => {
+  const { status, agentId, limit = 50 } = req.query;
+  
+  let filtered = [...deals];
+  
+  if (status) {
+    filtered = filtered.filter(d => d.status === status);
+  }
+  if (agentId) {
+    filtered = filtered.filter(d => d.agentId === agentId);
+  }
+  
+  res.json({
+    success: true,
+    count: filtered.length,
+    data: filtered.slice(0, parseInt(limit))
+  });
+});
+
+/**
+ * 销售后台 - 标记成交
+ */
+app.post('/api/admin/deals', (req, res) => {
+  const { propertyId, customerName, customerPhone, dealAmount, notes } = req.body;
+  
+  const property = properties.find(p => p.id === parseInt(propertyId));
+  
+  const deal = {
+    id: deals.length + 1,
+    propertyId,
+    propertyTitle: property ? property.title : '未知房源',
+    agentId: property ? property.agentId : '',
+    agentName: property ? property.agentName : '',
+    customerName,
+    customerPhone,
+    dealAmount,
+    status: 'pending',
+    createdAt: new Date().toISOString(),
+    notes
+  };
+  
+  deals.push(deal);
+  
+  console.log(`🎉 新成交！${customerName} - ${propertyId} - ${dealAmount} AED`);
+  
+  res.json({
+    success: true,
+    message: '成交已记录',
+    data: deal
+  });
+});
+
+/**
+ * 销售后台 - 更新成交状态
+ */
+app.patch('/api/admin/deals/:id/status', (req, res) => {
+  const { id } = req.params;
+  const { status } = req.body;
+  
+  const deal = deals.find(d => d.id === parseInt(id));
+  if (!deal) {
+    return res.status(404).json({ error: '成交记录不存在' });
+  }
+  
+  deal.status = status;
+  deal.updatedAt = new Date().toISOString();
+  
+  res.json({
+    success: true,
+    message: '状态已更新',
+    data: deal
+  });
+});
+
+/**
+ * 发送成交通知（模拟）
+ */
+async function sendDealNotification(deal) {
+  // TODO: 实现真实的通知发送
+  // - WhatsApp: 使用 WhatsApp Business API
+  // - 短信：使用 Twilio 或当地服务商
+  // - 邮件：使用 SendGrid 或 AWS SES
+  
+  console.log('📬 发送成交通知:');
+  console.log(`   客户：${deal.customerName} (${deal.customerPhone})`);
+  console.log(`   销售：${deal.agentName} (${deal.agentId})`);
+  console.log(`   金额：${deal.dealAmount} AED`);
+  
+  // 模拟发送延迟
+  await new Promise(resolve => setTimeout(resolve, 100));
+  
+  return {
+    success: true,
+    sent: true,
+    channels: ['whatsapp', 'sms', 'email']
+  };
+}
+
+/**
  * 健康检查
  */
 app.get('/api/health', (req, res) => {
   res.json({
     status: 'ok',
     timestamp: new Date().toISOString(),
-    version: '1.0.0'
+    version: '2.0.0',
+    stats: {
+      properties: properties.length,
+      deals: deals.length,
+      sales: salesTeam.length
+    }
   });
 });
 
