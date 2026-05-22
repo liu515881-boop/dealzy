@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dealzy - 迪拜房产 AI 客服</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #F8F9FA;
+      line-height: 1.6;
+    }
+    .header {
+      background: white;
+      padding: 20px 40px;
+      border-bottom: 1px solid #e2e8f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-icon { font-size: 28px; }
+    .logo-text {
+      font-weight: 700;
+      font-size: 20px;
+      color: #1a365d;
+    }
+    .logo-sub {
+      font-size: 12px;
+      color: #718096;
+    }
+    .nav { display: flex; gap: 24px; }
+    .nav a {
+      color: #1a202c;
+      text-decoration: none;
+      font-size: 15px;
+    }
+    .btn {
+      background: #1a365d;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-outline {
+      background: white;
+      color: #1a365d;
+      border: 1px solid #1a365d;
+    }
+    .hero {
+      background: #F8F9FA;
+      padding: 80px 40px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 36px;
+      color: #1a202c;
+      margin-bottom: 16px;
+    }
+    .hero p {
+      font-size: 18px;
+      color: #718096;
+      max-width: 600px;
+      margin: 0 auto 32px;
+    }
+    .hero-buttons { display: flex; gap: 16px; justify-content: center; }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 24px;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .section-title h2 {
+      font-size: 28px;
+      color: #1a202c;
+      margin-bottom: 8px;
+    }
+    .section-title p {
+      font-size: 16px;
+      color: #718096;
+    }
+    .properties {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 24px;
+    }
+    .property-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+      transition: box-shadow 0.2s;
+    }
+    .property-card:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .property-image {
+      height: 200px;
+      background: #f7f7f7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #a0aec0;
+      font-size: 48px;
+    }
+    .property-content { padding: 16px; }
+    .property-price {
+      font-size: 22px;
+      font-weight: 700;
+      color: #1a365d;
+      margin-bottom: 8px;
+    }
+    .property-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1a202c;
+      margin-bottom: 8px;
+    }
+    .property-area {
+      font-size: 14px;
+      color: #718096;
+      margin-bottom: 12px;
+    }
+    .property-info {
+      font-size: 14px;
+      color: #718096;
+      border-top: 1px solid #f0f0f0;
+      padding-top: 12px;
+    }
+    .property-info span { margin-right: 16px; }
+    .features {
+      background: white;
+      padding: 80px 24px;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 48px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .feature { text-align: center; }
+    .feature-icon {
+      font-size: 48px;
+      color: #1a365d;
+      margin-bottom: 16px;
+    }
+    .feature h3 {
+      font-size: 18px;
+      color: #1a202c;
+      margin-bottom: 8px;
+    }
+    .feature p {
+      font-size: 15px;
+      color: #718096;
+    }
+    .footer {
+      background: #F8F9FA;
+      padding: 40px 24px;
+      text-align: center;
+      border-top: 1px solid #e2e8f0;
+    }
+    .footer-brand {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1a365d;
+      margin-bottom: 16px;
+    }
+    .footer-text {
+      font-size: 13px;
+      color: #718096;
+    }
+    .chat-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #1a365d;
+      color: white;
+      padding: 16px 24px;
+      border-radius: 28px;
+      border: none;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">
+      <span class="logo-icon">🏠</span>
+      <div>
+        <div class="logo-text">Dealzy</div>
+        <div class="logo-sub">迪拜房产 AI 客服</div>
+      </div>
+    </div>
+    <div class="nav">
+      <a href="#">首页</a>
+      <a href="#properties">房源</a>
+      <a href="#features">特色</a>
+    </div>
+    <a href="#/admin" class="btn">销售后台</a>
+  </div>
+
+  <div class="hero">
+    <h1>找到您在迪拜的理想家园</h1>
+    <p>AI 智能匹配，专业房产顾问，让交易更简单</p>
+    <div class="hero-buttons">
+      <a href="#properties" class="btn">浏览房源</a>
+      <a href="#/admin" class="btn btn-outline">销售后台</a>
+    </div>
+  </div>
+
+  <div class="container" id="properties">
+    <div class="section-title">
+      <h2>精选房源</h2>
+      <p>迪拜热门区域优质房源</p>
+    </div>
+    <div class="properties">
+      <div class="property-card">
+        <div class="property-image">🏠</div>
+        <div class="property-content">
+          <div class="property-price">AED 45,000<span style="font-size:14px;color:#718096;font-weight:400">/年</span></div>
+          <div class="property-title">Studio Apartment in Silicon Gate</div>
+          <div class="property-area">📍 DSO</div>
+          <div class="property-info">
+            <span>Studio</span>
+            <span>450 尺</span>
+            <span>带家具</span>
+          </div>
+        </div>
+      </div>
+      <div class="property-card">
+        <div class="property-image">🏠</div>
+        <div class="property-content">
+          <div class="property-price">AED 65,000<span style="font-size:14px;color:#718096;font-weight:400">/年</span></div>
+          <div class="property-title">1BHK in DSO Tech Park</div>
+          <div class="property-area">📍 DSO</div>
+          <div class="property-info">
+            <span>1 卧室</span>
+            <span>750 尺</span>
+            <span>带家具</span>
+          </div>
+        </div>
+      </div>
+      <div class="property-card">
+        <div class="property-image">🏠</div>
+        <div class="property-content">
+          <div class="property-price">AED 95,000<span style="font-size:14px;color:#718096;font-weight:400">/年</span></div>
+          <div class="property-title">2BHK in JVC Circle</div>
+          <div class="property-area">📍 JVC</div>
+          <div class="property-info">
+            <span>2 卧室</span>
+            <span>1100 尺</span>
+            <span>空房</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="features" id="features">
+    <div class="features-grid">
+      <div class="feature">
+        <div class="feature-icon">⚡</div>
+        <h3>快速响应</h3>
+        <p>AI 客服 24/7 在线，销售顾问 5 分钟内回复</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🌍</div>
+        <h3>多语言支持</h3>
+        <p>中文、英文、阿拉伯语，沟通无障碍</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">💰</div>
+        <h3>价格透明</h3>
+        <p>真实房源，真实价格，无隐藏费用</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-brand">Dealzy × Well Chosen 房产</div>
+    <div class="footer-text">© 2026 Dealzy. All rights reserved.</div>
+    <div class="footer-text" style="margin-top:8px">Powered by AI · Made with ❤️ in Dubai</div>
+  </div>
+
+  <button class="chat-btn" onclick="alert('AI 客服功能开发中')">💬 AI 客服</button>
+</body>
+</html>
