@@ -1,20 +1,13 @@
 import { useState, useEffect } from 'react'
-import { Layout, Card, Row, Col, Input, Button, Space, message as antdMessage, Tooltip, Modal, Divider, Popover } from 'antd'
-import { t, setLang, getCurrentLang, getCurrentLangConfig, languages } from './i18n.js'
-import { 
-  HomeOutlined, 
-  MessageOutlined,
-  SendOutlined,
-  PhoneOutlined,
-  WhatsAppOutlined,
-  DashboardOutlined,
-  HeartOutlined,
-  ShareAltOutlined
-} from '@ant-design/icons'
+import { Layout, Card, Row, Col, Button, Space, Tooltip, Modal, Divider, Avatar } from 'antd'
+import { DashboardOutlined, MessageOutlined, SendOutlined } from '@ant-design/icons'
 import Admin from './pages/Admin.jsx'
+import propertiesData from '../data/properties.json'
 
 const { Header, Content, Footer } = Layout
-const { TextArea } = Input
+const { TextArea } = Input || {}
+
+const mockProperties = propertiesData.slice(0, 50)
 
 // 简单的 hash 路由
 const useHashRoute = () => {
@@ -33,17 +26,12 @@ const useHashRoute = () => {
   return { route, navigate }
 }
 
-// 真实房源数据
-import propertiesData from '../data/properties.json'
-const mockProperties = propertiesData.slice(0, 50)
-
 /**
- * 房源卡片组件 - 符合设计系统 v2.0
+ * 房源卡片组件
  */
 const PropertyCard = ({ property }) => {
   const [modalOpen, setModalOpen] = useState(false)
   const [imageError, setImageError] = useState(false)
-  const currentLang = getCurrentLang()
   
   const getPropertyImage = () => {
     if (imageError || !property.image) {
@@ -138,7 +126,6 @@ const PropertyCard = ({ property }) => {
           <Button 
             key="contact" 
             type="primary" 
-            icon={<WhatsAppOutlined />}
             onClick={() => {
               const msg = `Hi，我对这套房源感兴趣：${property.title} - AED ${property.price}`
               window.open(`https://wa.me/${property.agentWhatsapp}?text=${encodeURIComponent(msg)}`)
@@ -164,7 +151,7 @@ const PropertyCard = ({ property }) => {
           <Col span={12}>
             <div style={{ marginBottom: 12 }}>
               <div style={{ color: '#999', fontSize: 12 }}>区域</div>
-              <div style={{ fontSize: 16, fontWeight: 600 }}>{property.areaName || property.area}</div>
+              <div style={{ fontSize: 16, fontWeight: 600 }}>{property.areaFull || property.area}</div>
             </div>
           </Col>
         </Row>
@@ -220,25 +207,10 @@ const PropertyCard = ({ property }) => {
 }
 
 /**
- * AI 客服对话组件 - 符合设计系统 v2.0
+ * AI 客服组件
  */
 const ChatWidget = () => {
-  const [messages, setMessages] = useState([{ type: 'ai', text: '您好！我是 Dealzy AI 助手，有什么可以帮您？😊' }])
-  const [input, setInput] = useState('')
   const [open, setOpen] = useState(false)
-  const currentLang = getCurrentLang()
-
-  const handleSend = async () => {
-    if (!input.trim()) return
-    const userMessage = input
-    setMessages([...messages, { type: 'user', text: userMessage }])
-    setInput('')
-    
-    setTimeout(() => {
-      const aiReply = { type: 'ai', text: '好的！DSO 目前有 3 套符合您的房源...\n\n您想看哪套？我可以安排看房！😊' }
-      setMessages(prev => [...prev, aiReply])
-    }, 1000)
-  }
 
   if (!open) {
     return (
@@ -292,38 +264,32 @@ const ChatWidget = () => {
           <div style={{ fontWeight: 600 }}>AI 助手</div>
           <div style={{ fontSize: 12, opacity: 0.8 }}>在线</div>
         </div>
-        <Button type="text" size="small" onClick={() => setOpen(false)} style={{ color: '#fff' }}></Button>
+        <Button type="text" size="small" onClick={() => setOpen(false)} style={{ color: '#fff' }}>✕</Button>
       </div>
 
       <div style={{ flex: 1, overflowY: 'auto', padding: 16, background: '#f7f7f7' }}>
-        {messages.map((msg, i) => (
-          <div key={i} style={{ marginBottom: 12, display: 'flex', justifyContent: msg.type === 'user' ? 'flex-end' : 'flex-start' }}>
-            <div style={{ 
-              maxWidth: '80%', 
-              padding: '12px 16px', 
-              borderRadius: 12, 
-              background: msg.type === 'user' ? '#e2e8f0' : '#fff',
-              color: msg.type === 'user' ? '#1a202c' : '#1a202c',
-              border: msg.type === 'ai' ? '1px solid #e2e8f0' : 'none'
-            }}>
-              <div style={{ whiteSpace: 'pre-wrap', fontSize: 15 }}>{msg.text}</div>
-            </div>
+        <div style={{ marginBottom: 12 }}>
+          <div style={{ 
+            maxWidth: '80%', 
+            padding: '12px 16px', 
+            borderRadius: 12, 
+            background: '#fff',
+            border: '1px solid #e2e8f0',
+            fontSize: 15
+          }}>
+            您好！我是 Dealzy AI 助手，有什么可以帮您？😊
           </div>
-        ))}
+        </div>
       </div>
 
       <div style={{ padding: 16, background: '#fff', borderRadius: '0 0 16px 16px', borderTop: '1px solid #e2e8f0' }}>
-        <Space.Compact style={{ width: '100%' }}>
-          <TextArea
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onPressEnter={handleSend}
-            placeholder="输入消息..."
-            autoSize={{ minRows: 1, maxRows: 3 }}
-            style={{ resize: 'none', borderRadius: 8 }}
-          />
-          <Button type="primary" icon={<SendOutlined />} onClick={handleSend} style={{ background: '#1a365d', border: 'none', borderRadius: 8 }}>发送</Button>
-        </Space.Compact>
+        <TextArea
+          placeholder="输入消息..."
+          autoSize={{ minRows: 1, maxRows: 3 }}
+          style={{ resize: 'none', borderRadius: 8, marginBottom: 8 }}
+          onPressEnter={() => {}}
+        />
+        <Button type="primary" icon={<SendOutlined />} block style={{ background: '#1a365d', border: 'none', borderRadius: 8 }}>发送</Button>
         <div style={{ fontSize: 12, color: '#a0aec0', marginTop: 8, textAlign: 'center' }}>
           AI 为您提供建议，最终请以销售确认
         </div>
@@ -333,37 +299,17 @@ const ChatWidget = () => {
 }
 
 /**
- * 主应用组件
+ * 主应用
  */
 function App() {
   const { route, navigate } = useHashRoute()
-  const [currentLang, setCurrentLang] = useState(getCurrentLang())
   
   if (route === '#/admin' || route.startsWith('#/admin?')) {
     return <Admin />
   }
   
-  const langConfig = getCurrentLangConfig()
-  const isRTL = currentLang === 'ar'
-  
-  const langContent = (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-      {Object.entries(languages).map(([code, config]) => (
-        <Button
-          key={code}
-          size="small"
-          onClick={() => { setCurrentLang(code); setLang(code) }}
-          style={{ textAlign: 'left', minWidth: 120, borderRadius: 8 }}
-          icon={<span>{config.flag}</span>}
-        >
-          {config.name}
-        </Button>
-      ))}
-    </div>
-  )
-  
   return (
-    <Layout style={{ minHeight: '100vh', direction: isRTL ? 'rtl' : 'ltr', background: '#F8F9FA' }}>
+    <Layout style={{ minHeight: '100vh', background: '#F8F9FA' }}>
       <Header style={{
         display: 'flex',
         alignItems: 'center',
@@ -376,23 +322,16 @@ function App() {
         zIndex: 999
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          <div style={{ fontSize: 24, color: '#1a365d' }}></div>
+          <div style={{ fontSize: 24 }}>🏠</div>
           <div>
             <div style={{ fontWeight: 700, fontSize: 20, color: '#1a365d' }}>Dealzy</div>
-            <div style={{ fontSize: 12, color: '#718096' }}>
-              {currentLang === 'zh' && '迪拜房产 AI 客服'}
-              {currentLang === 'en' && 'Dubai Real Estate AI'}
-              {currentLang === 'ar' && 'نظام الذكاء الاصطناعي للعقارات'}
-            </div>
+            <div style={{ fontSize: 12, color: '#718096' }}>迪拜房产 AI 客服</div>
           </div>
         </div>
         
         <Space size="large">
           <Button type="link" href="#/" style={{ fontSize: 15, color: '#1a202c' }}>首页</Button>
           <Button type="link" href="#/properties" style={{ fontSize: 15, color: '#1a202c' }}>房源</Button>
-          <Popover content={langContent} trigger="click" placement="bottomRight">
-            <Button icon={<span>{langConfig.flag}</span>} style={{ borderRadius: 8, color: '#1a202c' }}>{langConfig.name}</Button>
-          </Popover>
           <Tooltip title="销售后台">
             <Button 
               type="primary" 
