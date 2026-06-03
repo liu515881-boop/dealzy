@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react'
-import { Layout, Card, Row, Col, Button, Space, Tooltip, Modal, Divider, Avatar } from 'antd'
+import { Layout, Card, Row, Col, Button, Space, Tooltip, Modal, Divider, Avatar, Input } from 'antd'
 import { DashboardOutlined, MessageOutlined, SendOutlined } from '@ant-design/icons'
 import Admin from './pages/Admin.jsx'
 import propertiesData from '../data/properties.json'
 
 const { Header, Content, Footer } = Layout
-const { TextArea } = Input || {}
+const { TextArea } = Input
 
 const mockProperties = propertiesData.slice(0, 50)
 
